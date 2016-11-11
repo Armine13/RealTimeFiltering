@@ -1,0 +1,27 @@
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/fifo_test_isim_beh.exe" -prj "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/fifo_test_beh.prj" "work.fifo_test" 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/ipcore_dir/fifo_8x1024.vhd" into library work
+Parsing VHDL file "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/fifo_test.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package textio
+Compiling package std_logic_textio
+Compiling package numeric_std
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture behavioral of entity fifo_generator_v9_3_bhv_ss [\fifo_generator_v9_3_bhv_ss(10,8...]
+Compiling architecture behavioral of entity fifo_generator_v9_3_conv [\fifo_generator_v9_3_conv(1,0,10...]
+Compiling architecture behavioral of entity fifo_generator_v9_3 [\fifo_generator_v9_3(1,0,10,"Bla...]
+Compiling architecture fifo_8x1024_a of entity fifo_8x1024 [fifo_8x1024_default]
+Compiling architecture behavioral of entity fifo_test
+Time Resolution for simulation is 1ps.
+Waiting for 4 sub-compilation(s) to finish...
+Compiled 16 VHDL Units
+Built simulation executable C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/fifo_test_isim_beh.exe
+Fuse Memory Usage: 43176 KB
+Fuse CPU Usage: 2620 ms

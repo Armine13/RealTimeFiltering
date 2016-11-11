@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/fifo_test_isim_beh.exe" -prj "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/fifo_test_beh.prj" "work.fifo_test" 

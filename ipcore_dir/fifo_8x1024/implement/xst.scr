@@ -1,0 +1,13 @@
+run
+-ifmt VHDL
+-ent fifo_8x1024_exdes 
+-p xa7a100t-csg324-2i
+-ifn xst.prj
+-write_timing_constraints No
+-iobuf YES
+-max_fanout 100
+-ofn fifo_8x1024_exdes 
+-ofmt NGC
+-bus_delimiter ()
+-hierarchy_separator /
+-case Maintain
