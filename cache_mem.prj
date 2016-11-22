@@ -1,0 +1,2 @@
+vhdl work "ipcore_dir/fifo_8x1024.vhd"
+vhdl work "cache_mem.vhd"

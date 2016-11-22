@@ -1,0 +1,2 @@
+vhdl isim_temp "ipcore_dir/fifo_8x1024.vhd"
+vhdl isim_temp "cache_mem.vhd"

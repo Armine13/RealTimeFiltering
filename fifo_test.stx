@@ -1,0 +1,67 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.18 secs
+ 
+--> Parameter xsthdpdir set to C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.18 secs
+ 
+--> Reading design: fifo_test.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\ipcore_dir\fifo_8x1024.vhd" into library work
+Parsing entity <fifo_8x1024>.
+Parsing architecture <fifo_8x1024_a> of entity <fifo_8x1024>.
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\PROCESS_NOFILTER.vhd" into library work
+Parsing entity <PROCESS_NOFILTER>.
+Parsing architecture <Behavioral> of entity <process_nofilter>.
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" into library work
+Parsing entity <cache_mem>.
+Parsing architecture <Behavioral> of entity <cache_mem>.
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\fifo_test.vhd" into library work
+Parsing entity <fifo_test>.
+Parsing architecture <Behavioral> of entity <fifo_test>.
+ERROR:HDLCompiler:1314 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\fifo_test.vhd" Line 103: Formal port/generic <pixel_ready> is not declared in <cache_mem>
+ERROR:HDLCompiler:69 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\fifo_test.vhd" Line 127: <result_available> is not declared.
+ERROR:HDLCompiler:192 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\fifo_test.vhd" Line 127: Actual of formal out port result_available cannot be an expression
+ERROR:HDLCompiler:32 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\fifo_test.vhd" Line 200: <filter> is already declared in this region.
+ERROR:HDLCompiler:854 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\fifo_test.vhd" Line 36: Unit <behavioral> ignored due to previous errors.
+VHDL file C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\fifo_test.vhd ignored due to errors
+--> 
+
+Total memory usage is 218424 kilobytes
+
+Number of errors   :    5 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

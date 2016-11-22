@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/av721115/realTimeFiltering/fifo_test_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="fifo_test" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_textio" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="textio" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="32" />
+   <wvobject fp_name="/fifo_test/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/din1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">din1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">din1[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/wr_en1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wr_en1</obj_property>
+      <obj_property name="ObjectShortName">wr_en1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/prog_full_thresh" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">prog_full_thresh[9:0]</obj_property>
+      <obj_property name="ObjectShortName">prog_full_thresh[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/dout1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout1[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/full1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">full1</obj_property>
+      <obj_property name="ObjectShortName">full1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/empty1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">empty1</obj_property>
+      <obj_property name="ObjectShortName">empty1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/data_count1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_count1[9:0]</obj_property>
+      <obj_property name="ObjectShortName">data_count1[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/prog_full1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">prog_full1</obj_property>
+      <obj_property name="ObjectShortName">prog_full1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/din2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">din2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">din2[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/wr_en2" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wr_en2</obj_property>
+      <obj_property name="ObjectShortName">wr_en2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/dout2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout2[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/full2" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">full2</obj_property>
+      <obj_property name="ObjectShortName">full2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/empty2" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">empty2</obj_property>
+      <obj_property name="ObjectShortName">empty2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/data_count2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_count2[9:0]</obj_property>
+      <obj_property name="ObjectShortName">data_count2[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/prog_full2" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">prog_full2</obj_property>
+      <obj_property name="ObjectShortName">prog_full2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/count_clk" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">count_clk</obj_property>
+      <obj_property name="ObjectShortName">count_clk</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/reset_counter" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset_counter</obj_property>
+      <obj_property name="ObjectShortName">reset_counter</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/pixel" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">pixel[7:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/endoffile" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">endoffile</obj_property>
+      <obj_property name="ObjectShortName">endoffile</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/fileready" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fileready</obj_property>
+      <obj_property name="ObjectShortName">fileready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/p0" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">p0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">p0[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/p1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">p1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">p1[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/p2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">p2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">p2[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/p3" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">p3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">p3[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/p4" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">p4[7:0]</obj_property>
+      <obj_property name="ObjectShortName">p4[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/p5" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">p5[7:0]</obj_property>
+      <obj_property name="ObjectShortName">p5[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/p6" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">p6[7:0]</obj_property>
+      <obj_property name="ObjectShortName">p6[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/p7" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">p7[7:0]</obj_property>
+      <obj_property name="ObjectShortName">p7[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/p8" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">p8[7:0]</obj_property>
+      <obj_property name="ObjectShortName">p8[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fifo_test/clk_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

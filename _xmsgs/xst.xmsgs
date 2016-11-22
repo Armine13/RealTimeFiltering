@@ -5,10 +5,7 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="871" delta="old" >"C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\fifo_test.vhd" Line 60: Using initial value <arg fmt="%s" index="1">&quot;0001111101&quot;</arg> for <arg fmt="%s" index="2">prog_full_thresh</arg> since it is never assigned
-</msg>
-
-<msg type="error" file="HDLCompiler" num="890" delta="old" >"C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\fifo_test.vhd" Line 92: wait statement without UNTIL clause not supported for synthesis
+<msg type="warning" file="HDLCompiler" num="1369" delta="old" >"C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\PROCESS_MEAN.vhd" Line 65: Possible infinite loop; process does not have a wait statement
 </msg>
 
 </messages>

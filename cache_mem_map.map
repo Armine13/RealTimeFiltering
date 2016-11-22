@@ -1,0 +1,63 @@
+Release 14.7 Map P.20131013 (nt64)
+Xilinx Map Application Log File for Design 'cache_mem'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xa7a100t-csg324-2I -w -logic_opt off -ol
+high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off
+-power off -o cache_mem_map.ncd cache_mem.ngd cache_mem.pcf 
+Target Device  : xa7a100t
+Target Package : csg324
+Target Speed   : -2i
+Mapper Version : aartix7 -- $Revision: 1.55 $
+Mapped Date    : Fri Nov 18 20:20:11 2016
+
+WARNING:LIT:701 - PAD symbol "CLK" has an undefined IOSTANDARD.
+WARNING:LIT:702 - PAD symbol "CLK" is not constrained (LOC) to a specific
+   location.
+Mapping design into LUTs...
+Running directed packing...
+Running delay-based LUT packing...
+Updating timing models...
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+Running timing-driven placement...
+Total REAL time at the beginning of Placer: 42 secs 
+Total CPU  time at the beginning of Placer: 36 secs 
+
+Phase 1.1  Initial Placement Analysis
+Phase 1.1  Initial Placement Analysis (Checksum:499a9) REAL time: 47 secs 
+
+Phase 2.7  Design Feasibility Check
+Phase 2.7  Design Feasibility Check (Checksum:499a9) REAL time: 47 secs 
+
+Phase 3.31  Local Placement Optimization
+Phase 3.31  Local Placement Optimization (Checksum:499a9) REAL time: 47 secs 
+
+Phase 4.2  Initial Placement for Architecture Specific Features
+....
+Phase 4.2  Initial Placement for Architecture Specific Features
+(Checksum:4471442c) REAL time: 59 secs 
+
+Phase 5.30  Global Clock Region Assignment
+Phase 5.30  Global Clock Region Assignment (Checksum:4471442c) REAL time: 59 secs 
+
+Phase 6.3  Local Placement Optimization
+....
+Phase 6.3  Local Placement Optimization (Checksum:1607cf85) REAL time: 1 mins 4 secs 
+
+Phase 7.5  Local Placement Optimization
+Phase 7.5  Local Placement Optimization (Checksum:1607cf85) REAL time: 1 mins 4 secs 
+
+Phase 8.8  Global Placement
+........................................
+..
+......................
+...............................................................................
+............................................
+Phase 8.8  Global Placement (Checksum:e0518851) REAL time: 1 mins 19 secs 
+
+Phase 9.5  Local Placement Optimization
+Phase 9.5  Local Placement Optimization (Checksum:e0518851) REAL time: 1 mins 19 secs 
+
+Phase 10.18  Placement Optimization

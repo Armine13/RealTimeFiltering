@@ -1,2 +1,4 @@
 vhdl work "ipcore_dir/fifo_8x1024.vhd"
+vhdl work "PROCESS_NOFILTER.vhd"
+vhdl work "cache_mem.vhd"
 vhdl work "fifo_test.vhd"
