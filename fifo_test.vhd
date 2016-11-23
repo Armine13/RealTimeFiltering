@@ -34,36 +34,13 @@ entity fifo_test is
 end fifo_test;
 
 architecture Behavioral of fifo_test is
-COMPONENT cache_mem
-  PORT ( CLK : in STD_LOGIC;
-			  DATA : in  STD_LOGIC_VECTOR (7 downto 0);
-           START_MEM : in  STD_LOGIC;
-			  PIXEL_READY : out STD_LOGIC;
-           P8 : out  STD_LOGIC_VECTOR (7 downto 0);
-           P7 : out  STD_LOGIC_VECTOR (7 downto 0);
-           P6 : out  STD_LOGIC_VECTOR (7 downto 0);
-           P5 : out  STD_LOGIC_VECTOR (7 downto 0);
-           P4 : out  STD_LOGIC_VECTOR (7 downto 0);
-           P3 : out  STD_LOGIC_VECTOR (7 downto 0);
-           P2 : out  STD_LOGIC_VECTOR (7 downto 0);
-           P1 : out  STD_LOGIC_VECTOR (7 downto 0);
-           P0 : out  STD_LOGIC_VECTOR (7 downto 0));
-END COMPONENT;
 
-COMPONENT PROCESS_MEAN
-Port ( P0 : in  STD_LOGIC_VECTOR (7 downto 0);
-           P1 : in  STD_LOGIC_VECTOR (7 downto 0);
-           P2 : in  STD_LOGIC_VECTOR (7 downto 0);
-           P3 : in  STD_LOGIC_VECTOR (7 downto 0);
-           P4 : in  STD_LOGIC_VECTOR (7 downto 0);
-           P5 : in  STD_LOGIC_VECTOR (7 downto 0);
-           P6 : in  STD_LOGIC_VECTOR (7 downto 0);
-           P7 : in  STD_LOGIC_VECTOR (7 downto 0);
-           P8 : in  STD_LOGIC_VECTOR (7 downto 0);
-           Filter_out : out  STD_LOGIC_VECTOR (7 downto 0);
-			  Enable : in STD_LOGIC;
-           CLK : in  STD_LOGIC;
-           Result_Available : out  STD_LOGIC);
+component TwoDFilter is
+Port( CLK              : in STD_LOGIC;
+		DATA_IN          : in  STD_LOGIC_VECTOR (7 downto 0);
+      START_PROCESS    : in  STD_LOGIC;
+		RESULT           : out  STD_LOGIC_VECTOR (7 downto 0);
+	   RESULT_AVAILABLE : out  STD_LOGIC);
 end component;
 
 --FIFO 1
@@ -72,25 +49,14 @@ signal clk : std_logic := '0';
 	
 signal count_clk: integer range 0 to 255 := 0;	
 
-signal pixel: std_logic_vector (7 downto 0);
-signal pixel_filt: std_logic_vector (7 downto 0);
 signal endoffile: std_logic := '0';
 signal fileready: std_logic := '0';
-signal start_mem: std_logic;
-signal PIXEL_READY : std_logic:= '0';
-signal Result_Available: std_logic := '0';
+signal pixel: std_logic_vector (7 downto 0);
 
+signal start_process: std_logic;
+signal result: std_logic_vector (7 downto 0);
+signal result_available: std_logic := '0';
 signal enable_filter: std_logic := '0';
-
-signal P0: std_logic_vector (7 downto 0);
-signal P1: std_logic_vector (7 downto 0);
-signal P2: std_logic_vector (7 downto 0);
-signal P3: std_logic_vector (7 downto 0);
-signal P4: std_logic_vector (7 downto 0);
-signal P5: std_logic_vector (7 downto 0);
-signal P6: std_logic_vector (7 downto 0);
-signal P7: std_logic_vector (7 downto 0);
-signal P8: std_logic_vector (7 downto 0);
 
 
 signal RESET_counter: std_logic;
@@ -99,37 +65,15 @@ constant clk_period : time := 10 ns;
 
 begin
   
-cache : cache_mem PORT MAP (
-	  CLK => clk,
-	  DATA => pixel,--std_logic_vector(to_unsigned(count_clk, 8)),
-	  START_MEM => start_mem,
-	  PIXEL_READY => PIXEL_READY,
-	  P0 => P0,
-	  P1 => P1,
-	  P2 => P2,
-	  P3 => P3,
-	  P4 => P4,
-	  P5 => P5,
-	  P6 => P6,
-	  P7 => P7,
-	  P8 => P8
-  );
-filter : PROCESS_MEAN Port map ( 
-	  P0 => P0,
-	  P1 => P1,
-	  P2 => P2,
-	  P3 => P3,
-	  P4 => P4,
-	  P5 => P5,
-	  P6 => P6,
-	  P7 => P7,
-	  P8 => P8,
-	  Filter_out => pixel_filt,
-	  Enable => enable_filter,
-	  CLK => CLK,
-	  Result_Available => Result_Available
-	  );
-
+filter1: TwoDFilter Port map( 
+		CLK              => clk,
+		DATA_IN          =>std_logic_vector(to_unsigned(count_clk, 8)),
+      START_PROCESS    => start_process,
+		RESULT           => result,
+	   RESULT_AVAILABLE => result_available
+		);
+		
+		
   -- Clock process definitions
 clk_process :process
 begin
@@ -159,7 +103,7 @@ begin
 end process;
 
 READFILE:process(CLK)
-  FILE infile : text is in "Lena128x128g_8bits.dat";
+  FILE infile : text is in "C:\Users\av721115\realTimeFiltering\Lena128x128g_8bits.dat";
   variable line_var: line;
   variable value :std_logic_vector (7 downto 0);    
   begin
