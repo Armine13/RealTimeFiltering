@@ -44,7 +44,10 @@ end PROCESS_NOFILTER;
 
 
 architecture Behavioral of PROCESS_NOFILTER is
-
+signal d1: STD_LOGIC_VECTOR (7 downto 0);
+signal d2: STD_LOGIC_VECTOR (7 downto 0);
+signal d3: STD_LOGIC_VECTOR (7 downto 0);
+signal cntr: integer:= 0;
 begin
 
 pn :process(CLK)
@@ -52,9 +55,16 @@ pn :process(CLK)
 begin
 	if Enable = '1' then
 	 if ( CLK'event and CLK = '1') then
-		
-			Filter_out <= P4;
-			Result_Available <= '1';
+			d3 <= P4;
+			d2 <= d3;
+			d1 <= d2;
+			
+			Filter_out <= d1;
+			if cntr = 2 then
+				Result_Available <= '1';
+			else
+				cntr <= cntr + 1;
+			end if;
 		end if;
 	end if;
 end process;

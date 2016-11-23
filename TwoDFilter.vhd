@@ -56,7 +56,7 @@ COMPONENT cache_mem
            P0 : out  STD_LOGIC_VECTOR (7 downto 0));
 END COMPONENT;
 
-COMPONENT PROCESS_MEAN
+COMPONENT PROCESS_NOFILTER
 Port ( P0 : in  STD_LOGIC_VECTOR (7 downto 0);
            P1 : in  STD_LOGIC_VECTOR (7 downto 0);
            P2 : in  STD_LOGIC_VECTOR (7 downto 0);
@@ -83,17 +83,22 @@ signal P2 : STD_LOGIC_VECTOR (7 downto 0);
 signal P1 : STD_LOGIC_VECTOR (7 downto 0);
 signal P0 : STD_LOGIC_VECTOR (7 downto 0);
 signal enable_filter : STD_LOGIC;
+signal filter_result_available: STD_LOGIC;
 
+signal counter : integer := 0;
+signal count_all:integer := 0;
+signal START_MEM : STD_LOGIC;
 
 type LIST_STATE is (S1,S2,S3,S4,S5);
 signal STATE : LIST_STATE;
+
 
 begin
 
 cache : cache_mem PORT MAP (
 	  CLK => clk,
 	  DATA => DATA_IN,
-	  START_MEM => START_PROCESS,
+	  START_MEM => START_MEM,
 	  PIXEL_READY => pixel_ready,
 	  P0 => P0,
 	  P1 => P1,
@@ -105,7 +110,7 @@ cache : cache_mem PORT MAP (
 	  P7 => P7,
 	  P8 => P8
   );
-filter : PROCESS_MEAN Port map ( 
+filter : PROCESS_NOFILTER Port map ( 
 	  P0 => P0,
 	  P1 => P1,
 	  P2 => P2,
@@ -118,7 +123,7 @@ filter : PROCESS_MEAN Port map (
 	  Filter_out => RESULT,
 	  Enable => enable_filter,
 	  CLK => CLK,
-	  Result_Available => result_available
+	  Result_Available => filter_result_available
 	  );
 
 main : process (CLK)
@@ -150,13 +155,20 @@ begin
 		when S1 =>
 			START_MEM <= '1';
 			enable_filter <= '0';
+			RESULT_AVAILABLE <= '0';
 			
 			if pixel_ready = '1' then STATE <= S2; end if;
 			
 		when S2 => 
+			if filter_result_available = '1' then RESULT_AVAILABLE <= '1'; end if;
 			enable_filter <= '1';
 			
+			if counter >= 16131 then
+				STATE <= S3;
+			end if;
+			
 		when S3 => 
+			RESULT_AVAILABLE <= '0';
 			
 		when others => STATE <= S1;
          
@@ -165,5 +177,16 @@ begin
     end if;
 end process main;
 
+count: process(CLK)
+begin
+	if (CLK'event  and CLK = '1') then
+		if (pixel_ready = '1') then--16255
+			counter <= counter + 1;
+		end if;
+		IF START_PROCESS = '1' then
+			count_all<= count_all + 1;
+		end if;
+	end if;
+end process count;
 end Behavioral;
 

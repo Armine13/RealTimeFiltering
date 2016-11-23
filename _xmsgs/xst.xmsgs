@@ -5,8 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="1369" delta="old" >"C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\PROCESS_MEAN.vhd" Line 65: Possible infinite loop; process does not have a wait statement
-</msg>
-
 </messages>
 

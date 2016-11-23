@@ -2,31 +2,28 @@ Command line:
    fifo_test_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  51322
+     -socket  51549
 
-Fri Nov 18 21:28:29 2016
+Thu Nov 24 00:17:50 2016
 
 
- Elaboration Time: 0.156001 sec
+ Elaboration Time: 0.156 sec
 
  Current Memory Usage: 697.418 Meg
 
- Total Signals          : 1125
- Total Nets             : 19602
- Total Signal Drivers   : 451
- Total Blocks           : 77
+ Total Signals          : 1139
+ Total Nets             : 19570
+ Total Signal Drivers   : 458
+ Total Blocks           : 78
  Total Primitive Blocks : 41
- Total Processes        : 198
+ Total Processes        : 200
  Total Traceable Variables  : 651
- Total Scalar Nets and Variables : 21373
-Total Line Count : 420
-In process PROCESS_MEAN.vhd:pn 
- Target Size 9 and source size 8 for array dimension 0 does not match. 
+ Total Scalar Nets and Variables : 21341
+Total Line Count : 442
 
+ Total Simulation Time: 1.65361 sec
 
- Total Simulation Time: 0.795605 sec
+ Current Memory Usage: 697.418 Meg
 
- Current Memory Usage: 1011.99 Meg
-
-Fri Nov 18 21:29:54 2016
+Thu Nov 24 00:21:16 2016
 

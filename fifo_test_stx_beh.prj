@@ -1,4 +1,5 @@
 vhdl isim_temp "ipcore_dir/fifo_8x1024.vhd"
-vhdl isim_temp "PROCESS_MEAN.vhd"
+vhdl isim_temp "PROCESS_NOFILTER.vhd"
 vhdl isim_temp "cache_mem.vhd"
+vhdl isim_temp "TwoDFilter.vhd"
 vhdl isim_temp "fifo_test.vhd"

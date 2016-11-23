@@ -26,13 +26,15 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="PROCESS_MEAN.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="PROCESS_MEAN.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="PROCESS_MEAN.xst"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="PROCESS_MEAN_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="PROCESS_MEAN_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="PROCESS_MEAN_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="PROCESS_MEAN_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="PROCESS_NOFILTER.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="PROCESS_NOFILTER.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="PROCESS_NOFILTER.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TwoDFilter.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="TwoDFilter.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="TwoDFilter.xst"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
@@ -63,6 +65,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="fifo_test.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="fifo_test.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="fifo_test.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="fifo_test_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="fifo_test_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="fifo_test_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="fifo_test_stx_beh.prj"/>
@@ -85,65 +88,78 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1478799798" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1478799798">
+    <transform xil_pn:end_ts="1479925318" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1479925318">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1479500847" xil_pn:in_ck="-2490295781658311883" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1479500847">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="PROCESS_MEAN.vhd"/>
-      <outfile xil_pn:name="PROCESS_NOFILTER.vhd"/>
-      <outfile xil_pn:name="cache_mem.vhd"/>
-      <outfile xil_pn:name="fifo_test.vhd"/>
-    </transform>
-    <transform xil_pn:end_ts="1479500998" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="1398359883554540674" xil_pn:start_ts="1479500998">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1479500998" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="6798426515405420206" xil_pn:start_ts="1479500998">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1479499526" xil_pn:in_ck="-1383587259006887647" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-6463321518068293901" xil_pn:start_ts="1479499526">
+    <transform xil_pn:end_ts="1479937177" xil_pn:in_ck="-7027947957177170103" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1479937177">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputAdded"/>
-      <outfile xil_pn:name="ipcore_dir/fifo_8x1024.ngc"/>
-      <outfile xil_pn:name="ipcore_dir/fifo_8x1024.vhd"/>
-    </transform>
-    <transform xil_pn:end_ts="1479500998" xil_pn:in_ck="-2490295781658311883" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1479500998">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="PROCESS_MEAN.vhd"/>
       <outfile xil_pn:name="PROCESS_NOFILTER.vhd"/>
+      <outfile xil_pn:name="TwoDFilter.vhd"/>
       <outfile xil_pn:name="cache_mem.vhd"/>
       <outfile xil_pn:name="fifo_test.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1479501012" xil_pn:in_ck="-3494837158539877202" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-9023067004955778712" xil_pn:start_ts="1479500998">
+    <transform xil_pn:end_ts="1479925318" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="4059064881329293510" xil_pn:start_ts="1479925318">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1479925318" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="5013582287547711218" xil_pn:start_ts="1479925318">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1479925318" xil_pn:in_ck="8199593192752788271" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-6463321518068293901" xil_pn:start_ts="1479925318">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="ipcore_dir/divider.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/divider.vhd"/>
+      <outfile xil_pn:name="ipcore_dir/fifo_8x1024.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/fifo_8x1024.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1479937187" xil_pn:in_ck="-1021278222041630545" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1479937187">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="PROCESS_MEAN_beh.prj"/>
-      <outfile xil_pn:name="PROCESS_MEAN_isim_beh.exe"/>
+      <outfile xil_pn:name="PROCESS_MEAN.vhd"/>
+      <outfile xil_pn:name="PROCESS_NOFILTER.vhd"/>
+      <outfile xil_pn:name="TwoDFilter.vhd"/>
+      <outfile xil_pn:name="cache_mem.vhd"/>
+      <outfile xil_pn:name="fifo_test.vhd"/>
+      <outfile xil_pn:name="ipcore_dir/divider.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1479937206" xil_pn:in_ck="4272598266391948968" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-4921649868262138480" xil_pn:start_ts="1479937187">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="fifo_test_beh.prj"/>
+      <outfile xil_pn:name="fifo_test_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1479501013" xil_pn:in_ck="-4814434295195769983" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-1987708698356833195" xil_pn:start_ts="1479501012">
+    <transform xil_pn:end_ts="1479937207" xil_pn:in_ck="-4814434295195769983" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5254435736179791779" xil_pn:start_ts="1479937206">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="PROCESS_MEAN_isim_beh.wdb"/>
+      <outfile xil_pn:name="fifo_test_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
     </transform>

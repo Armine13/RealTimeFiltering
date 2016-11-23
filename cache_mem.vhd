@@ -98,7 +98,7 @@ signal p7_temp: std_logic_vector (7 downto 0);
 signal p8_temp: std_logic_vector (7 downto 0);
 
 signal counter: integer := 0;
-signal counter2: integer := 0;
+--signal counter2: integer := 0;
 
 begin
 
@@ -139,12 +139,14 @@ begin
 		
 			if (full1 = '0' and full2 = '0') then
 				
-				if (counter > 257) then
+				if (counter > 255) then
 					PIXEL_READY <= '1';
 				else
 					counter <= counter + 1;
 					PIXEL_READY <= '0';
 				end if;
+				
+				--counter2 <= counter2 + 1;--16384
 				
 				P0_temp <= P1_temp;
 				P1_temp <= P2_temp;
@@ -174,19 +176,19 @@ P6 <= P6_temp;
 P7 <= P7_temp;
 P8 <= P8_temp;
 
-empty_flag: process(CLK)
-begin
-
-if empty2 then
-	if (counter2 > 2) then
-		EMPTY <= '1';
-	else
-		EMPTY <= '0';
-		counter2 <= counter2 + 1;
-	end if;
-end if;
-
-end process empty_flag;
+--empty_flag: process(CLK)
+--begin
+--
+--if empty2 then
+--	if (counter2 > 2) then
+--		EMPTY <= '1';
+--	else
+--		EMPTY <= '0';
+--		counter2 <= counter2 + 1;
+--	end if;
+--end if;
+--
+--end process empty_flag;
 
 end Behavioral;
 

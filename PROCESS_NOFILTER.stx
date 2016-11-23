@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.23 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.15 secs
  
 --> Parameter xsthdpdir set to C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.23 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.15 secs
  
 --> Reading design: PROCESS_NOFILTER.prj
 
@@ -45,11 +45,11 @@ Parsing architecture <Behavioral> of entity <process_nofilter>.
 
 
 Total REAL time to Xst completion: 12.00 secs
-Total CPU time to Xst completion: 11.50 secs
+Total CPU time to Xst completion: 12.68 secs
  
 --> 
 
-Total memory usage is 218360 kilobytes
+Total memory usage is 219384 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

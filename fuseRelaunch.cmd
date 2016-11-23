@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/PROCESS_MEAN_isim_beh.exe" -prj "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/PROCESS_MEAN_beh.prj" "work.PROCESS_MEAN" 
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/fifo_test_isim_beh.exe" -prj "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/fifo_test_beh.prj" "work.fifo_test" 
