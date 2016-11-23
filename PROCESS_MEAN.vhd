@@ -72,17 +72,17 @@ begin
 		
 		if (CLK'event and CLK = '1') then    -- Cache memory ready to send 
 		
-			Sum0 <= P0 + P1 ;			-- FIRST STAGE ADDER
-			Sum1 <= P2 + P3 ;			-- FIRST STAGE ADDER
-			Sum2 <= P5 + P6 ;			-- FIRST STAGE ADDER
-			Sum3 <= P7 + P8 ;			-- FIRST STAGE ADDER
+			Sum0 <= ('0'&P0) + ('0'&P1) ;			-- FIRST STAGE ADDER
+			Sum1 <= ('0'&P2) + ('0'&P3) ;			-- FIRST STAGE ADDER
+			Sum2 <= ('0'&P5) + ('0'&P6) ;		-- FIRST STAGE ADDER
+			Sum3 <= ('0'&P7) + ('0'&P8) ;			-- FIRST STAGE ADDER
 
 
-			Sum4 <= Sum0 + Sum1 ;	-- SECOND STAGE ADDER 
-			Sum5 <= Sum2 + Sum3 ;	-- SECOND STAGE ADDER 
+			Sum4 <= ('0'&Sum0) + ('0'&Sum1) ;	-- SECOND STAGE ADDER 
+			Sum5 <= ('0'&Sum2) + ('0'&Sum3) ;-- SECOND STAGE ADDER 
 
 
-			Sum6 <= Sum4  + Sum5 ; -- THIRD STAGE ADDER
+			Sum6 <= ('0'&Sum4) + ('0'&Sum5) ; -- THIRD STAGE ADDER
 		  
 		  
 			--Filter_out <= Sum6 srl 3 ;--  division by 8 Right shift 3 digits
