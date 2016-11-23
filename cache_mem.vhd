@@ -34,6 +34,7 @@ entity cache_mem is
 			  DATA : in  STD_LOGIC_VECTOR (7 downto 0);
            START_MEM : in  STD_LOGIC;
 			  PIXEL_READY : out STD_LOGIC;
+			  EMPTY : out STD_LOGIC;
            P8 : out  STD_LOGIC_VECTOR (7 downto 0);
            P7 : out  STD_LOGIC_VECTOR (7 downto 0);
            P6 : out  STD_LOGIC_VECTOR (7 downto 0);
@@ -84,8 +85,9 @@ signal data_count2 : STD_LOGIC_VECTOR(9 DOWNTO 0);
 signal prog_full2 : STD_LOGIC;
 signal rst: std_logic;
 
+signal empty2: STD_LOGIC;
 
-signal p0_temp: std_logic_vector (7 downto 0);
+signal p0_temp: std_logic_vector (7 downto 0) := (others => '0');
 signal p1_temp: std_logic_vector (7 downto 0);
 signal p2_temp: std_logic_vector (7 downto 0);
 signal p3_temp: std_logic_vector (7 downto 0);
@@ -96,6 +98,7 @@ signal p7_temp: std_logic_vector (7 downto 0);
 signal p8_temp: std_logic_vector (7 downto 0);
 
 signal counter: integer := 0;
+signal counter2: integer := 0;
 
 begin
 
@@ -109,7 +112,7 @@ fifo1 : fifo_8x1024  PORT MAP (
     prog_full_thresh => prog_full_thresh,
     dout => dout1,
     full => full1,
-    --empty => empty1,
+    empty => open,
     data_count => data_count1,
     prog_full => prog_full1
   );
@@ -123,7 +126,7 @@ fifo2 : fifo_8x1024  PORT MAP (
     prog_full_thresh => prog_full_thresh,
     dout => dout2,
     full => full2,
-    --empty => empty2,
+    empty => empty2,
     data_count => data_count2,
     prog_full => prog_full2
   );
@@ -170,6 +173,20 @@ P5 <= P5_temp;
 P6 <= P6_temp;
 P7 <= P7_temp;
 P8 <= P8_temp;
+
+empty_flag: process(CLK)
+begin
+
+if empty2 then
+	if (counter2 > 2) then
+		EMPTY <= '1';
+	else
+		EMPTY <= '0';
+		counter2 <= counter2 + 1;
+	end if;
+end if;
+
+end process empty_flag;
 
 end Behavioral;
 
