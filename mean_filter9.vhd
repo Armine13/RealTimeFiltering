@@ -46,17 +46,6 @@ end mean_filter9;
 
 architecture Behavioral of mean_filter9 is
 
---component divider is Port 
---(   aclk : in STD_LOGIC := 'X'; 
---    s_axis_divisor_tvalid : in STD_LOGIC := 'X'; 
---    s_axis_dividend_tvalid : in STD_LOGIC := 'X'; 
---    m_axis_dout_tvalid : out STD_LOGIC; 
---    s_axis_divisor_tdata : in STD_LOGIC_VECTOR ( 7 downto 0 ); 
---    s_axis_dividend_tdata : in STD_LOGIC_VECTOR ( 15 downto 0 ); 
---    m_axis_dout_tdata : out STD_LOGIC_VECTOR ( 15 downto 0 ) 
---  );
---end component;
-
 function div_by_9(dividend:std_logic_vector) return std_logic_vector is
 variable q, d: unsigned(11 downto 0);
 variable r, quot: unsigned(31 downto 0);
@@ -78,29 +67,11 @@ begin
 	q := q + shift_right(q, 16);
 	r := resize(d - q * 3, 32); -- 0 <= r <= 15.
 	quot := resize(q + shift_right(5 * (r + 1), 4), 32);
---	
---	d := q;
---	
---	q := (d srl 2) + (d srl 4); -- q = d*0.0101 (approx)
---	q := q + (q srl 4); -- q = d*0.01010101
---	q := q + (q srl 8);
---	q := q + (q srl 16);
---	r := resize(d - q * 3, 32); -- 0 <= r <= 15.
---	q := resize(q + (5 * (r + 1) srl 4), 32);
 	
 	quotient := std_logic_vector(resize(quot, 12));
 	return quotient;
 end div_by_9;
---
---FUNCTION bin2gray(B1:std_logic_vector) return std_logic_vector is 
--- VARIABLE G1 : std_logic_vector(B1'high downto B1'low) ; 
--- BEGIN 
--- G1(G1'high):=B1(B1'high); 
--- for i in B1'high-1 downto B1'low loop 
---	G1(i) := B1(i+1) XOR B1(i); 
--- end loop; 
--- return G1; 
--- end bin2gray; -- end function
+
 --	 
  signal Sum1 :std_logic_vector (8 downto 0) := (others => '0');
  signal Sum2 :std_logic_vector (8 downto 0):= (others => '0');
@@ -118,27 +89,6 @@ end div_by_9;
  signal cntr : integer := 0;
 
 begin
-
---div1 : divider
---  PORT MAP (
---    aclk                   => CLK,
---    s_axis_divisor_tvalid  => s_axis_divisor_tvalid,
---    s_axis_divisor_tdata   => divisor,
---    s_axis_dividend_tvalid => s_axis_dividend_tvalid,
---    s_axis_dividend_tdata  => Sum8,
---    m_axis_dout_tvalid     => m_axis_dout_tvalid,
---    m_axis_dout_tdata      => m_axis_dout_tdata
---  );
---div2 : divider
---	PORT MAP (
---	 aclk                   => CLK,
---	 s_axis_divisor_tvalid  => s_axis_divisor_tvalid,
---	 s_axis_divisor_tdata   => divisor,
---	 s_axis_dividend_tvalid => s_axis_dividend_tvalid,
---	 s_axis_dividend_tdata  => dividend,
---	 m_axis_dout_tvalid     => m_axis_dout_tvalid,
---	 m_axis_dout_tdata      => m_axis_dout_tdata
---	);
 
 pn :process(CLK)
 
