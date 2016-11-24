@@ -27,19 +27,19 @@ use IEEE.NUMERIC_STD.ALL;
 
 
 entity PROCESS_NOFILTER is
-Port ( P0 : in  STD_LOGIC_VECTOR (7 downto 0);
-           P1 : in  STD_LOGIC_VECTOR (7 downto 0);
-           P2 : in  STD_LOGIC_VECTOR (7 downto 0);
-           P3 : in  STD_LOGIC_VECTOR (7 downto 0);
-           P4 : in  STD_LOGIC_VECTOR (7 downto 0);
-           P5 : in  STD_LOGIC_VECTOR (7 downto 0);
-           P6 : in  STD_LOGIC_VECTOR (7 downto 0);
-           P7 : in  STD_LOGIC_VECTOR (7 downto 0);
-           P8 : in  STD_LOGIC_VECTOR (7 downto 0);
-           Filter_out : out  STD_LOGIC_VECTOR (7 downto 0);
-			  Enable : in STD_LOGIC;
-           CLK : in  STD_LOGIC;
-           Result_Available : out  STD_LOGIC);
+Port ( P0 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
+           P1 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
+           P2 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
+           P3 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
+           P4 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
+           P5 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
+           P6 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
+           P7 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
+           P8 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
+           Filter_out : out  STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
+			  Enable : in STD_LOGIC := '0';
+           CLK : in  STD_LOGIC :='0';
+           Result_Available : out  STD_LOGIC:='0');
 end PROCESS_NOFILTER;
 
 

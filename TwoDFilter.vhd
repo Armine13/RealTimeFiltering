@@ -56,7 +56,7 @@ COMPONENT cache_mem
            P0 : out  STD_LOGIC_VECTOR (7 downto 0));
 END COMPONENT;
 
-COMPONENT PROCESS_NOFILTER
+COMPONENT mean_filter9
 Port ( P0 : in  STD_LOGIC_VECTOR (7 downto 0);
            P1 : in  STD_LOGIC_VECTOR (7 downto 0);
            P2 : in  STD_LOGIC_VECTOR (7 downto 0);
@@ -110,7 +110,7 @@ cache : cache_mem PORT MAP (
 	  P7 => P7,
 	  P8 => P8
   );
-filter : PROCESS_NOFILTER Port map ( 
+filter : mean_filter9 Port map ( 
 	  P0 => P0,
 	  P1 => P1,
 	  P2 => P2,
@@ -163,7 +163,7 @@ begin
 			if filter_result_available = '1' then RESULT_AVAILABLE <= '1'; end if;
 			enable_filter <= '1';
 			
-			if counter >= 16131 then
+			if counter >= 16133 then
 				STATE <= S3;
 			end if;
 			

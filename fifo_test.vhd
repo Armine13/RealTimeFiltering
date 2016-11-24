@@ -120,12 +120,14 @@ begin
   
 filter1: TwoDFilter Port map( 
 		CLK              => clk,
-		DATA_IN          => pixel,--std_logic_vector(to_unsigned(count_clk, 8)),
+		DATA_IN          => pixel,
+		--DATA_IN          => std_logic_vector(to_unsigned(count_clk, 8)),
       START_PROCESS    => start_process,
 		RESET            => reset,
 		RESULT           => result,
 	   RESULT_AVAILABLE => result_available
 		);
+		
 --		
 
 --cache : cache_mem PORT MAP (
