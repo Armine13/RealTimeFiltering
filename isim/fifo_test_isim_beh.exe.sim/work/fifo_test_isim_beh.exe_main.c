@@ -40,8 +40,8 @@ int main(int argc, char **argv)
     xilinxcorelib_a_1469255796_3212880686_init();
     work_a_3533105193_4040780156_init();
     work_a_1707285540_3212880686_init();
-    work_a_2648525110_3212880686_init();
-    work_a_1460470445_3212880686_init();
+    work_a_3909342474_3212880686_init();
+    work_a_0620377269_3212880686_init();
     work_a_0516081855_3212880686_init();
 
 

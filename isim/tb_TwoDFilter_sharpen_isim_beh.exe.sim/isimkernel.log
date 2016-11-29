@@ -1,0 +1,29 @@
+Command line:
+   tb_TwoDFilter_sharpen_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  60285
+
+Mon Nov 28 22:10:32 2016
+
+
+ Elaboration Time: 0.187201 sec
+
+ Current Memory Usage: 697.639 Meg
+
+ Total Signals          : 1438
+ Total Nets             : 26246
+ Total Signal Drivers   : 583
+ Total Blocks           : 208
+ Total Primitive Blocks : 124
+ Total Processes        : 300
+ Total Traceable Variables  : 1130
+ Total Scalar Nets and Variables : 29946
+Total Line Count : 626
+
+ Total Simulation Time: 4.10283 sec
+
+ Current Memory Usage: 1012.21 Meg
+
+Mon Nov 28 22:11:17 2016
+

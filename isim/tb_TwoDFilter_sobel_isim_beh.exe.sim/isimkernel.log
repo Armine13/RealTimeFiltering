@@ -1,0 +1,29 @@
+Command line:
+   tb_TwoDFilter_sobel_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  60297
+
+Mon Nov 28 22:13:09 2016
+
+
+ Elaboration Time: 0.218401 sec
+
+ Current Memory Usage: 697.647 Meg
+
+ Total Signals          : 1799
+ Total Nets             : 35258
+ Total Signal Drivers   : 740
+ Total Blocks           : 363
+ Total Primitive Blocks : 223
+ Total Processes        : 423
+ Total Traceable Variables  : 1592
+ Total Scalar Nets and Variables : 41006
+Total Line Count : 848
+
+ Total Simulation Time: 13.6657 sec
+
+ Current Memory Usage: 1012.22 Meg
+
+Mon Nov 28 22:13:56 2016
+

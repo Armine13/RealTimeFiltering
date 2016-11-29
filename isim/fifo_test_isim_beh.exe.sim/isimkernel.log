@@ -2,12 +2,12 @@ Command line:
    fifo_test_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  51549
+     -socket  60144
 
-Thu Nov 24 00:17:50 2016
+Mon Nov 28 21:41:32 2016
 
 
- Elaboration Time: 0.156 sec
+ Elaboration Time: 0.124802 sec
 
  Current Memory Usage: 697.418 Meg
 
@@ -21,9 +21,9 @@ Thu Nov 24 00:17:50 2016
  Total Scalar Nets and Variables : 21341
 Total Line Count : 442
 
- Total Simulation Time: 1.65361 sec
+ Total Simulation Time: 2.97962 sec
 
  Current Memory Usage: 697.418 Meg
 
-Thu Nov 24 00:21:16 2016
+Mon Nov 28 21:44:08 2016
 

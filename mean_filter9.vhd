@@ -72,7 +72,7 @@ begin
 	return quotient;
 end div_by_9;
 
---	 
+
  signal Sum1 :std_logic_vector (8 downto 0) := (others => '0');
  signal Sum2 :std_logic_vector (8 downto 0):= (others => '0');
  signal Sum3 :std_logic_vector (8 downto 0):= (others => '0');

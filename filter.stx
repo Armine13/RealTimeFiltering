@@ -1,0 +1,84 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.65 secs
+ 
+--> Parameter xsthdpdir set to C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.65 secs
+ 
+--> Reading design: filter.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\ipcore_dir\multiplier.vhd" into library work
+Parsing entity <multiplier>.
+Parsing architecture <multiplier_a> of entity <multiplier>.
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" into library work
+Parsing entity <filter>.
+Parsing architecture <Behavioral> of entity <filter>.
+ERROR:HDLCompiler:69 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 99: <ce> is not declared.
+WARNING:HDLCompiler:439 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 100: Formal port p of mode out cannot be associated with actual port m0 of mode in
+ERROR:HDLCompiler:100 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 100: m0 with mode 'in' cannot be updated
+ERROR:HDLCompiler:69 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 106: <ce> is not declared.
+WARNING:HDLCompiler:439 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 107: Formal port p of mode out cannot be associated with actual port m1 of mode in
+ERROR:HDLCompiler:100 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 107: m1 with mode 'in' cannot be updated
+ERROR:HDLCompiler:69 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 113: <ce> is not declared.
+WARNING:HDLCompiler:439 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 114: Formal port p of mode out cannot be associated with actual port m2 of mode in
+ERROR:HDLCompiler:100 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 114: m2 with mode 'in' cannot be updated
+ERROR:HDLCompiler:69 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 120: <ce> is not declared.
+WARNING:HDLCompiler:439 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 121: Formal port p of mode out cannot be associated with actual port m3 of mode in
+ERROR:HDLCompiler:100 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 121: m3 with mode 'in' cannot be updated
+ERROR:HDLCompiler:69 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 127: <ce> is not declared.
+WARNING:HDLCompiler:439 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 128: Formal port p of mode out cannot be associated with actual port m4 of mode in
+ERROR:HDLCompiler:100 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 128: m4 with mode 'in' cannot be updated
+ERROR:HDLCompiler:69 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 134: <ce> is not declared.
+WARNING:HDLCompiler:439 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 135: Formal port p of mode out cannot be associated with actual port m5 of mode in
+ERROR:HDLCompiler:100 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 135: m5 with mode 'in' cannot be updated
+ERROR:HDLCompiler:69 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 141: <ce> is not declared.
+WARNING:HDLCompiler:439 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 142: Formal port p of mode out cannot be associated with actual port m6 of mode in
+ERROR:HDLCompiler:100 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 142: m6 with mode 'in' cannot be updated
+ERROR:HDLCompiler:69 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 148: <ce> is not declared.
+WARNING:HDLCompiler:439 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 149: Formal port p of mode out cannot be associated with actual port m7 of mode in
+ERROR:HDLCompiler:100 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 149: m7 with mode 'in' cannot be updated
+ERROR:HDLCompiler:69 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 155: <ce> is not declared.
+WARNING:HDLCompiler:439 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 156: Formal port p of mode out cannot be associated with actual port m8 of mode in
+ERROR:HDLCompiler:100 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 156: m8 with mode 'in' cannot be updated
+ERROR:HDLCompiler:69 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter.vhd" Line 163: <ce> is not declared.
+Sorry, too many errors..
+--> 
+
+Total memory usage is 215608 kilobytes
+
+Number of errors   :   19 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

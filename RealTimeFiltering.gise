@@ -35,6 +35,22 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TwoDFilter.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="TwoDFilter.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="TwoDFilter.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TwoDFilter_emboss.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="TwoDFilter_emboss.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="TwoDFilter_emboss.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TwoDFilter_identity.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="TwoDFilter_identity.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="TwoDFilter_identity.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TwoDFilter_laplacian.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="TwoDFilter_laplacian.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="TwoDFilter_laplacian.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TwoDFilter_mean.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="TwoDFilter_mean.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="TwoDFilter_mean.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TwoDFilter_sharpen.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="TwoDFilter_sharpen.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="TwoDFilter_sharpen.xst"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="TwoDFilter_sobel_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
@@ -65,22 +81,44 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="fifo_test.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="fifo_test.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="fifo_test.xst"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="fifo_test_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="fifo_test_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="fifo_test_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="fifo_test_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="fifo_test_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="fifo_test_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="filter.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="filter.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="filter.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="filter_kernel.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="filter_kernel.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="filter_kernel.xst"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="ipcore_dir/coregen.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="laplacian_filter.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="laplacian_filter.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="laplacian_filter.xst"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="laplacian_filter_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="netgen"/>
     <file xil_pn:fileType="FILE_NETGEN_REPORT" xil_pn:name="netgen/synthesis/cache_mem_synthesis.nlf"/>
     <file xil_pn:fileType="FILE_VHDL" xil_pn:name="netgen/synthesis/cache_mem_synthesis.vhd"/>
     <file xil_pn:fileType="FILE_NETGEN_REPORT" xil_pn:name="netgen/synthesis/fifo_test_synthesis.nlf"/>
     <file xil_pn:fileType="FILE_VHDL" xil_pn:name="netgen/synthesis/fifo_test_synthesis.vhd"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="sobel_filter.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="sobel_filter.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="sobel_filter.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_TwoDFilter_emboss_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_TwoDFilter_emboss_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="tb_TwoDFilter_emboss_isim_beh.wdb"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_TwoDFilter_laplacian_isim_beh.exe"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_TwoDFilter_mean_isim_beh.exe"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_TwoDFilter_sharpen_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_TwoDFilter_sobel_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_TwoDFilter_sobel_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_multiplier_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_multiplier_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="tb_multiplier_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
@@ -92,74 +130,105 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1479937177" xil_pn:in_ck="-7027947957177170103" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1479937177">
+    <transform xil_pn:end_ts="1480367550" xil_pn:in_ck="3361592636841231498" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1480367550">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="PROCESS_MEAN.vhd"/>
-      <outfile xil_pn:name="PROCESS_NOFILTER.vhd"/>
+      <outfile xil_pn:name="DataFlow_Display.vhd"/>
+      <outfile xil_pn:name="Imag_proc_top.vhd"/>
       <outfile xil_pn:name="TwoDFilter.vhd"/>
+      <outfile xil_pn:name="TwoDFilter_emboss.vhd"/>
+      <outfile xil_pn:name="TwoDFilter_identity.vhd"/>
+      <outfile xil_pn:name="TwoDFilter_laplacian.vhd"/>
+      <outfile xil_pn:name="TwoDFilter_mean.vhd"/>
+      <outfile xil_pn:name="TwoDFilter_sharpen.vhd"/>
+      <outfile xil_pn:name="TwoDFilter_sobel.vhd"/>
       <outfile xil_pn:name="cache_mem.vhd"/>
+      <outfile xil_pn:name="emboss_filter.vhd"/>
       <outfile xil_pn:name="fifo_test.vhd"/>
+      <outfile xil_pn:name="filter_kernel.vhd"/>
+      <outfile xil_pn:name="identity_filter.vhd"/>
+      <outfile xil_pn:name="laplacian_filter.vhd"/>
+      <outfile xil_pn:name="mean_filter9.vhd"/>
+      <outfile xil_pn:name="sharpen_filter.vhd"/>
+      <outfile xil_pn:name="sobel_filter.vhd"/>
+      <outfile xil_pn:name="tb_TwoDFilter_emboss.vhd"/>
+      <outfile xil_pn:name="tb_TwoDFilter_identity.vhd"/>
+      <outfile xil_pn:name="tb_TwoDFilter_laplacian.vhd"/>
+      <outfile xil_pn:name="tb_TwoDFilter_sharpen.vhd"/>
+      <outfile xil_pn:name="tb_TwoDFilter_sobel.vhd"/>
+      <outfile xil_pn:name="tb_Two_DFilter_mean.vhd"/>
+      <outfile xil_pn:name="tb_multiplier.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1479925318" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="4059064881329293510" xil_pn:start_ts="1479925318">
+    <transform xil_pn:end_ts="1480367550" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-4713166079164464176" xil_pn:start_ts="1480367550">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1479925318" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="5013582287547711218" xil_pn:start_ts="1479925318">
+    <transform xil_pn:end_ts="1480367550" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-3071410718056974340" xil_pn:start_ts="1480367550">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1479925318" xil_pn:in_ck="8199593192752788271" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-6463321518068293901" xil_pn:start_ts="1479925318">
+    <transform xil_pn:end_ts="1480363168" xil_pn:in_ck="-4726932414525420131" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-3207596191970158858" xil_pn:start_ts="1480363168">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="ipcore_dir/divider.ngc"/>
-      <outfile xil_pn:name="ipcore_dir/divider.vhd"/>
       <outfile xil_pn:name="ipcore_dir/fifo_8x1024.ngc"/>
       <outfile xil_pn:name="ipcore_dir/fifo_8x1024.vhd"/>
+      <outfile xil_pn:name="ipcore_dir/multiplier.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/multiplier.vhd"/>
+      <outfile xil_pn:name="ipcore_dir/square_multiplier.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/square_multiplier.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1479937187" xil_pn:in_ck="-1021278222041630545" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1479937187">
+    <transform xil_pn:end_ts="1480367550" xil_pn:in_ck="-7954909313198030298" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1480367550">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="PROCESS_MEAN.vhd"/>
-      <outfile xil_pn:name="PROCESS_NOFILTER.vhd"/>
+      <outfile xil_pn:name="DataFlow_Display.vhd"/>
+      <outfile xil_pn:name="Imag_proc_top.vhd"/>
       <outfile xil_pn:name="TwoDFilter.vhd"/>
+      <outfile xil_pn:name="TwoDFilter_emboss.vhd"/>
+      <outfile xil_pn:name="TwoDFilter_identity.vhd"/>
+      <outfile xil_pn:name="TwoDFilter_laplacian.vhd"/>
+      <outfile xil_pn:name="TwoDFilter_mean.vhd"/>
+      <outfile xil_pn:name="TwoDFilter_sharpen.vhd"/>
+      <outfile xil_pn:name="TwoDFilter_sobel.vhd"/>
       <outfile xil_pn:name="cache_mem.vhd"/>
+      <outfile xil_pn:name="emboss_filter.vhd"/>
       <outfile xil_pn:name="fifo_test.vhd"/>
-      <outfile xil_pn:name="ipcore_dir/divider.vhd"/>
+      <outfile xil_pn:name="filter_kernel.vhd"/>
+      <outfile xil_pn:name="identity_filter.vhd"/>
+      <outfile xil_pn:name="ipcore_dir/multiplier.vhd"/>
+      <outfile xil_pn:name="ipcore_dir/square_multiplier.vhd"/>
+      <outfile xil_pn:name="laplacian_filter.vhd"/>
+      <outfile xil_pn:name="mean_filter9.vhd"/>
+      <outfile xil_pn:name="sharpen_filter.vhd"/>
+      <outfile xil_pn:name="sobel_filter.vhd"/>
+      <outfile xil_pn:name="tb_TwoDFilter_emboss.vhd"/>
+      <outfile xil_pn:name="tb_TwoDFilter_identity.vhd"/>
+      <outfile xil_pn:name="tb_TwoDFilter_laplacian.vhd"/>
+      <outfile xil_pn:name="tb_TwoDFilter_sharpen.vhd"/>
+      <outfile xil_pn:name="tb_TwoDFilter_sobel.vhd"/>
+      <outfile xil_pn:name="tb_Two_DFilter_mean.vhd"/>
+      <outfile xil_pn:name="tb_multiplier.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1479937206" xil_pn:in_ck="4272598266391948968" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-4921649868262138480" xil_pn:start_ts="1479937187">
+    <transform xil_pn:end_ts="1480367576" xil_pn:in_ck="-5571359892905174369" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-7974157010011635740" xil_pn:start_ts="1480367550">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForProperties"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="fifo_test_beh.prj"/>
-      <outfile xil_pn:name="fifo_test_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="tb_TwoDFilter_sobel_beh.prj"/>
+      <outfile xil_pn:name="tb_TwoDFilter_sobel_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1479937207" xil_pn:in_ck="-4814434295195769983" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5254435736179791779" xil_pn:start_ts="1479937206">
+    <transform xil_pn:end_ts="1480367577" xil_pn:in_ck="2263450110191944365" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-7612597520910169988" xil_pn:start_ts="1480367576">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="fifo_test_isim_beh.wdb"/>
+      <outfile xil_pn:name="TwoDFilter_sobel_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
     </transform>

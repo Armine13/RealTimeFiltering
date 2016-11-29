@@ -1,0 +1,389 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> Reading design: state_machine.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "state_machine.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "state_machine"
+Output Format                      : NGC
+Target Device                      : xc7a100t-3-csg324
+
+---- Source Options
+Top Module Name                    : state_machine
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\av721115\realTimeFiltering\state_machine.vhd" into library work
+Parsing entity <state_machine>.
+Parsing architecture <Behavioral> of entity <state_machine>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <state_machine> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:\Users\av721115\realTimeFiltering\state_machine.vhd" Line 54: reset should be on the sensitivity list of the process
+INFO:HDLCompiler:679 - "C:\Users\av721115\realTimeFiltering\state_machine.vhd" Line 64. Case statement is complete. others clause is never selected
+WARNING:HDLCompiler:92 - "C:\Users\av721115\realTimeFiltering\state_machine.vhd" Line 82: current_state should be on the sensitivity list of the process
+INFO:HDLCompiler:679 - "C:\Users\av721115\realTimeFiltering\state_machine.vhd" Line 88. Case statement is complete. others clause is never selected
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <state_machine>.
+    Related source file is "C:\Users\av721115\realTimeFiltering\state_machine.vhd".
+    Found 3-bit register for signal <current_state>.
+    Found finite state machine <FSM_0> for signal <current_state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 14                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 7                                              |
+    | Clock              | CLK (rising_edge)                              |
+    | Reset              | RESET (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | state1                                         |
+    | Power Up State     | state1                                         |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <state_machine> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <current_state[1:3]> with gray encoding.
+--------------------
+ State  | Encoding
+--------------------
+ state1 | 000
+ state2 | 001
+ state3 | 011
+ state4 | 010
+ state5 | 110
+--------------------
+
+Optimizing unit <state_machine> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block state_machine, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 3
+ Flip-Flops                                            : 3
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : state_machine.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 8
+#      LUT2                        : 3
+#      LUT3                        : 2
+#      LUT4                        : 2
+#      LUT5                        : 1
+# FlipFlops/Latches                : 3
+#      FDC                         : 3
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 10
+#      IBUF                        : 3
+#      OBUF                        : 7
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:               3  out of  126800     0%  
+ Number of Slice LUTs:                    8  out of  63400     0%  
+    Number used as Logic:                 8  out of  63400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     11
+   Number with an unused Flip Flop:       8  out of     11    72%  
+   Number with an unused LUT:             3  out of     11    27%  
+   Number of fully used LUT-FF pairs:     0  out of     11     0%  
+   Number of unique control sets:         1
+
+IO Utilization: 
+ Number of IOs:                          11
+ Number of bonded IOBs:                  11  out of    210     5%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK                                | BUFGP                  | 3     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 0.996ns (Maximum Frequency: 1003.814MHz)
+   Minimum input arrival time before clock: 0.793ns
+   Maximum output required time after clock: 1.285ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 0.996ns (frequency: 1003.814MHz)
+  Total number of paths / destination ports: 8 / 3
+-------------------------------------------------------------------------
+Delay:               0.996ns (Levels of Logic = 1)
+  Source:            current_state_FSM_FFd1 (FF)
+  Destination:       current_state_FSM_FFd1 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: current_state_FSM_FFd1 to current_state_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              5   0.361   0.530  current_state_FSM_FFd1 (current_state_FSM_FFd1)
+     LUT5:I2->O            1   0.097   0.000  current_state_FSM_FFd1-In1 (current_state_FSM_FFd1-In)
+     FDC:D                     0.008          current_state_FSM_FFd1
+    ----------------------------------------
+    Total                      0.996ns (0.466ns logic, 0.530ns route)
+                                       (46.8% logic, 53.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+  Total number of paths / destination ports: 8 / 6
+-------------------------------------------------------------------------
+Offset:              0.793ns (Levels of Logic = 2)
+  Source:            b (PAD)
+  Destination:       current_state_FSM_FFd1 (FF)
+  Destination Clock: CLK rising
+
+  Data Path: b to current_state_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.001   0.688  b_IBUF (b_IBUF)
+     LUT5:I0->O            1   0.097   0.000  current_state_FSM_FFd1-In1 (current_state_FSM_FFd1-In)
+     FDC:D                     0.008          current_state_FSM_FFd1
+    ----------------------------------------
+    Total                      0.793ns (0.106ns logic, 0.688ns route)
+                                       (13.4% logic, 86.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+  Total number of paths / destination ports: 16 / 7
+-------------------------------------------------------------------------
+Offset:              1.285ns (Levels of Logic = 2)
+  Source:            current_state_FSM_FFd3 (FF)
+  Destination:       ST_OUT<1> (PAD)
+  Source Clock:      CLK rising
+
+  Data Path: current_state_FSM_FFd3 to ST_OUT<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              8   0.361   0.543  current_state_FSM_FFd3 (current_state_FSM_FFd3)
+     LUT3:I0->O            2   0.097   0.283  ST_OUT<1>1 (ST_OUT_1_OBUF)
+     OBUF:I->O                 0.000          ST_OUT_1_OBUF (ST_OUT<1>)
+    ----------------------------------------
+    Total                      1.285ns (0.458ns logic, 0.827ns route)
+                                       (35.6% logic, 64.4% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |    0.996|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.99 secs
+ 
+--> 
+
+Total memory usage is 432668 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

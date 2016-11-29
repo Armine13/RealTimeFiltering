@@ -30,12 +30,12 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity TwoDFilter is
-Port( CLK              : in STD_LOGIC;
-		DATA_IN          : in  STD_LOGIC_VECTOR (7 downto 0);
-      START_PROCESS    : in  STD_LOGIC;
-		RESET            : in STD_LOGIC;
-		RESULT           : out  STD_LOGIC_VECTOR (7 downto 0);
-	   RESULT_AVAILABLE : out  STD_LOGIC);
+Port( CLK              : in STD_LOGIC := '0';
+		DATA_IN          : in  STD_LOGIC_VECTOR (7 downto 0):= (others => '0');
+      START_PROCESS    : in  STD_LOGIC:= '0';
+		RESET            : in STD_LOGIC := '0';
+		RESULT           : out  STD_LOGIC_VECTOR (7 downto 0):= (others => '0');
+	   RESULT_AVAILABLE : out  STD_LOGIC:= '0');
 end TwoDFilter;
 
 architecture Behavioral of TwoDFilter is
@@ -56,7 +56,7 @@ COMPONENT cache_mem
            P0 : out  STD_LOGIC_VECTOR (7 downto 0));
 END COMPONENT;
 
-COMPONENT mean_filter9
+COMPONENT sobel_filter--mean_filter9--laplacian_filter
 Port ( P0 : in  STD_LOGIC_VECTOR (7 downto 0);
            P1 : in  STD_LOGIC_VECTOR (7 downto 0);
            P2 : in  STD_LOGIC_VECTOR (7 downto 0);
@@ -110,7 +110,7 @@ cache : cache_mem PORT MAP (
 	  P7 => P7,
 	  P8 => P8
   );
-filter : mean_filter9 Port map ( 
+filter : sobel_filter Port map ( 
 	  P0 => P0,
 	  P1 => P1,
 	  P2 => P2,

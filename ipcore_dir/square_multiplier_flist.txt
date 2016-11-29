@@ -1,0 +1,15 @@
+# Output products list for <square_multiplier>
+_xmsgs\pn_parser.xmsgs
+square_multiplier.asy
+square_multiplier.gise
+square_multiplier.ngc
+square_multiplier.sym
+square_multiplier.vhd
+square_multiplier.vho
+square_multiplier.xco
+square_multiplier.xise
+square_multiplier\doc\mult_gen_ds255.pdf
+square_multiplier\doc\mult_gen_v11_2_readme.txt
+square_multiplier\doc\mult_gen_v11_2_vinfo.html
+square_multiplier_flist.txt
+square_multiplier_xmdf.tcl

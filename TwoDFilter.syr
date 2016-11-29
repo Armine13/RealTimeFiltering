@@ -1,0 +1,709 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Reading design: TwoDFilter.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "TwoDFilter.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "TwoDFilter"
+Output Format                      : NGC
+Target Device                      : xa7a100t-2I-csg324
+
+---- Source Options
+Top Module Name                    : TwoDFilter
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\ipcore_dir\fifo_8x1024.vhd" into library work
+Parsing entity <fifo_8x1024>.
+Parsing architecture <fifo_8x1024_a> of entity <fifo_8x1024>.
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\mean_filter9.vhd" into library work
+Parsing entity <mean_filter9>.
+Parsing architecture <Behavioral> of entity <mean_filter9>.
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" into library work
+Parsing entity <cache_mem>.
+Parsing architecture <Behavioral> of entity <cache_mem>.
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\TwoDFilter.vhd" into library work
+Parsing entity <TwoDFilter>.
+Parsing architecture <Behavioral> of entity <twodfilter>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <TwoDFilter> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <cache_mem> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 70: Using initial value '1' for wr_en1 since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 71: Using initial value "0001111010" for prog_full_thresh since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 80: Using initial value '1' for wr_en2 since it is never assigned
+
+Elaborating entity <fifo_8x1024> (architecture <fifo_8x1024_a>) from library <work>.
+WARNING:HDLCompiler:634 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 86: Net <rst> does not have a driver.
+
+Elaborating entity <mean_filter9> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\mean_filter9.vhd" Line 147: enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\TwoDFilter.vhd" Line 131: reset should be on the sensitivity list of the process
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <TwoDFilter>.
+    Related source file is "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\TwoDFilter.vhd".
+INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\TwoDFilter.vhd" line 98: Output port <EMPTY> of the instance <cache> is unconnected or connected to loadless signal.
+    Found 3-bit register for signal <STATE>.
+    Found 1-bit register for signal <enable_filter>.
+    Found 1-bit register for signal <RESULT_AVAILABLE>.
+    Found 32-bit register for signal <counter>.
+INFO:Xst:1799 - State s4 is never reached in FSM <STATE>.
+INFO:Xst:1799 - State s5 is never reached in FSM <STATE>.
+    Found finite state machine <FSM_0> for signal <STATE>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 4                                              |
+    | Clock              | CLK (rising_edge)                              |
+    | Reset              | RESET (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | s1                                             |
+    | Power Up State     | s1                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit adder for signal <counter[31]_GND_3_o_add_8_OUT> created at line 184.
+    Found 32-bit comparator greater for signal <n0002> created at line 166
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  34 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   1 Finite State Machine(s).
+Unit <TwoDFilter> synthesized.
+
+Synthesizing Unit <cache_mem>.
+    Related source file is "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd".
+INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 106: Output port <data_count> of the instance <fifo1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 106: Output port <empty> of the instance <fifo1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 120: Output port <data_count> of the instance <fifo2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 120: Output port <empty> of the instance <fifo2> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <EMPTY> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <rst> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 32-bit register for signal <counter>.
+    Found 8-bit register for signal <p0_temp>.
+    Found 8-bit register for signal <p1_temp>.
+    Found 8-bit register for signal <p2_temp>.
+    Found 8-bit register for signal <din2>.
+    Found 8-bit register for signal <p3_temp>.
+    Found 8-bit register for signal <p4_temp>.
+    Found 8-bit register for signal <p5_temp>.
+    Found 8-bit register for signal <din1>.
+    Found 8-bit register for signal <p6_temp>.
+    Found 8-bit register for signal <p7_temp>.
+    Found 8-bit register for signal <p8_temp>.
+    Found 1-bit register for signal <PIXEL_READY>.
+    Found 32-bit adder for signal <counter[31]_GND_4_o_add_1_OUT> created at line 145.
+    Found 32-bit comparator greater for signal <counter[31]_GND_4_o_LessThan_1_o> created at line 142
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred 121 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <cache_mem> synthesized.
+
+Synthesizing Unit <mean_filter9>.
+    Related source file is "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\mean_filter9.vhd".
+    Found 9-bit register for signal <Sum4>.
+    Found 9-bit register for signal <Sum3>.
+    Found 9-bit register for signal <Sum2>.
+    Found 9-bit register for signal <Sum1>.
+    Found 10-bit register for signal <Sum5>.
+    Found 10-bit register for signal <Sum6>.
+    Found 8-bit register for signal <D2>.
+    Found 11-bit register for signal <Sum7>.
+    Found 8-bit register for signal <D3>.
+    Found 12-bit register for signal <Sum8>.
+    Found 12-bit register for signal <div_res>.
+    Found 8-bit register for signal <Filter_out>.
+    Found 1-bit register for signal <Result_Available>.
+    Found 32-bit register for signal <cntr>.
+    Found 8-bit register for signal <D1>.
+    Found 9-bit adder for signal <GND_19_o_GND_19_o_add_0_OUT> created at line 152.
+    Found 9-bit adder for signal <GND_19_o_GND_19_o_add_1_OUT> created at line 153.
+    Found 9-bit adder for signal <GND_19_o_GND_19_o_add_2_OUT> created at line 154.
+    Found 9-bit adder for signal <GND_19_o_GND_19_o_add_3_OUT> created at line 155.
+    Found 10-bit adder for signal <GND_19_o_GND_19_o_add_4_OUT> created at line 157.
+    Found 10-bit adder for signal <GND_19_o_GND_19_o_add_5_OUT> created at line 158.
+    Found 11-bit adder for signal <GND_19_o_GND_19_o_add_6_OUT> created at line 161.
+    Found 12-bit adder for signal <GND_19_o_GND_19_o_add_7_OUT> created at line 164.
+    Found 12-bit adder for signal <n0186> created at line 67.
+    Found 12-bit adder for signal <n0189> created at line 68.
+    Found 12-bit adder for signal <GND_19_o_GND_19_o_add_11_OUT> created at line 69.
+    Found 32-bit adder for signal <GND_19_o_GND_19_o_add_14_OUT> created at line 1241.
+    Found 64-bit adder for signal <n0099> created at line 72.
+    Found 12-bit adder for signal <n0201> created at line 75.
+    Found 12-bit adder for signal <n0204> created at line 76.
+    Found 12-bit adder for signal <GND_19_o_GND_19_o_add_20_OUT> created at line 77.
+    Found 32-bit adder for signal <GND_19_o_GND_19_o_add_23_OUT> created at line 1241.
+    Found 64-bit adder for signal <n0108> created at line 80.
+    Found 32-bit adder for signal <cntr[31]_GND_19_o_add_27_OUT> created at line 175.
+    Found 24-bit subtractor for signal <GND_19_o_GND_19_o_sub_14_OUT<23:0>> created at line 71.
+    Found 24-bit subtractor for signal <GND_19_o_GND_19_o_sub_23_OUT<23:0>> created at line 79.
+    Found 12x2-bit multiplier for signal <GND_19_o_PWR_21_o_MuLt_12_OUT> created at line 1399.
+    Found 3x32-bit multiplier for signal <n0098> created at line 1405.
+    Found 12x2-bit multiplier for signal <GND_19_o_PWR_21_o_MuLt_21_OUT> created at line 1399.
+    Found 3x32-bit multiplier for signal <n0107> created at line 1405.
+    Summary:
+	inferred   4 Multiplier(s).
+	inferred  21 Adder/Subtractor(s).
+	inferred 156 D-type flip-flop(s).
+Unit <mean_filter9> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 4
+ 12x2-bit multiplier                                   : 2
+ 32x3-bit multiplier                                   : 2
+# Adders/Subtractors                                   : 23
+ 10-bit adder                                          : 2
+ 11-bit adder                                          : 1
+ 12-bit adder                                          : 7
+ 24-bit subtractor                                     : 2
+ 32-bit adder                                          : 5
+ 64-bit adder                                          : 2
+ 9-bit adder                                           : 4
+# Registers                                            : 31
+ 1-bit register                                        : 4
+ 10-bit register                                       : 2
+ 11-bit register                                       : 1
+ 12-bit register                                       : 2
+ 32-bit register                                       : 3
+ 8-bit register                                        : 15
+ 9-bit register                                        : 4
+# Comparators                                          : 2
+ 32-bit comparator greater                             : 2
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst - The specified part-type was not generated at build time. XST is loading the full part-type and will therefore consume more CPU and memory.
+Loading device for application Rf_Device from file '7a100t.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
+Reading core <ipcore_dir/fifo_8x1024.ngc>.
+Loading core <fifo_8x1024> for timing and area information for instance <fifo1>.
+Loading core <fifo_8x1024> for timing and area information for instance <fifo2>.
+Loading device for application Rf_Device from file '7a100t.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
+WARNING:Xst:2677 - Node <div_res_8> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <div_res_9> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <div_res_10> of sequential type is unconnected in block <filter>.
+WARNING:Xst:2677 - Node <div_res_11> of sequential type is unconnected in block <filter>.
+
+Synthesizing (advanced) Unit <TwoDFilter>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <TwoDFilter> synthesized (advanced).
+
+Synthesizing (advanced) Unit <cache_mem>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <cache_mem> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mean_filter9>.
+The following registers are absorbed into counter <cntr>: 1 register on signal <cntr>.
+	Multiplier <Mmult_GND_19_o_PWR_21_o_MuLt_21_OUT> in block <mean_filter9> and adder/subtractor <Msub_GND_19_o_GND_19_o_sub_23_OUT<23:0>> in block <mean_filter9> are combined into a MAC<Maddsub_GND_19_o_PWR_21_o_MuLt_21_OUT>.
+	Multiplier <Mmult_GND_19_o_PWR_21_o_MuLt_12_OUT> in block <mean_filter9> and adder/subtractor <Msub_GND_19_o_GND_19_o_sub_14_OUT<23:0>> in block <mean_filter9> are combined into a MAC<Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT>.
+	The following registers are also absorbed by the MAC: <Sum8> in block <mean_filter9>.
+Unit <mean_filter9> synthesized (advanced).
+WARNING:Xst:2677 - Node <Sum8_0> of sequential type is unconnected in block <mean_filter9>.
+WARNING:Xst:2677 - Node <Sum8_1> of sequential type is unconnected in block <mean_filter9>.
+WARNING:Xst:2677 - Node <div_res_8> of sequential type is unconnected in block <mean_filter9>.
+WARNING:Xst:2677 - Node <div_res_9> of sequential type is unconnected in block <mean_filter9>.
+WARNING:Xst:2677 - Node <div_res_10> of sequential type is unconnected in block <mean_filter9>.
+WARNING:Xst:2677 - Node <div_res_11> of sequential type is unconnected in block <mean_filter9>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# MACs                                                 : 2
+ 12x2-to-24-bit MAC                                    : 2
+# Multipliers                                          : 2
+ 32x3-bit multiplier                                   : 2
+# Adders/Subtractors                                   : 18
+ 10-bit adder                                          : 2
+ 11-bit adder                                          : 1
+ 12-bit adder                                          : 9
+ 32-bit adder                                          : 2
+ 9-bit adder                                           : 4
+# Counters                                             : 3
+ 32-bit up counter                                     : 3
+# Registers                                            : 209
+ Flip-Flops                                            : 209
+# Comparators                                          : 2
+ 32-bit comparator greater                             : 2
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <STATE[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ s1    | 00
+ s2    | 01
+ s3    | 10
+ s4    | unreached
+ s5    | unreached
+-------------------
+WARNING:Xst:1710 - FF/Latch <Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT1_0> (without init value) has a constant value of 0 in block <mean_filter9>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <Sum8_10> in Unit <mean_filter9> is equivalent to the following FF/Latch, which will be removed : <Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT1_2> 
+INFO:Xst:2261 - The FF/Latch <Sum8_2> in Unit <mean_filter9> is equivalent to the following FF/Latch, which will be removed : <Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT1_10> 
+INFO:Xst:2261 - The FF/Latch <Sum8_3> in Unit <mean_filter9> is equivalent to the following FF/Latch, which will be removed : <Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT1_9> 
+INFO:Xst:2261 - The FF/Latch <Sum8_4> in Unit <mean_filter9> is equivalent to the following FF/Latch, which will be removed : <Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT1_8> 
+INFO:Xst:2261 - The FF/Latch <Sum8_5> in Unit <mean_filter9> is equivalent to the following FF/Latch, which will be removed : <Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT1_7> 
+INFO:Xst:2261 - The FF/Latch <Sum8_6> in Unit <mean_filter9> is equivalent to the following FF/Latch, which will be removed : <Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT1_6> 
+INFO:Xst:2261 - The FF/Latch <Sum8_7> in Unit <mean_filter9> is equivalent to the following FF/Latch, which will be removed : <Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT1_5> 
+INFO:Xst:2261 - The FF/Latch <Sum8_8> in Unit <mean_filter9> is equivalent to the following FF/Latch, which will be removed : <Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT1_4> 
+INFO:Xst:2261 - The FF/Latch <Sum8_9> in Unit <mean_filter9> is equivalent to the following FF/Latch, which will be removed : <Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT1_3> 
+INFO:Xst:2261 - The FF/Latch <Sum8_11> in Unit <mean_filter9> is equivalent to the following FF/Latch, which will be removed : <Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT1_1> 
+
+Optimizing unit <TwoDFilter> ...
+
+Optimizing unit <cache_mem> ...
+
+Optimizing unit <mean_filter9> ...
+WARNING:Xst:1293 - FF/Latch <cache/counter_9> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_10> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_11> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_12> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_13> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_14> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_15> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_16> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_17> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_18> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_19> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_20> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_21> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_22> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_23> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_24> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_25> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_26> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_27> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_28> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_29> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_30> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_31> has a constant value of 0 in block <TwoDFilter>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block TwoDFilter, actual ratio is 1.
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <cache/fifo2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <cache/fifo2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <cache/fifo2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <cache/fifo1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <cache/fifo1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <cache/fifo1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <cache/fifo2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <cache/fifo2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <cache/fifo2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <cache/fifo1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <cache/fifo1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <cache/fifo1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+
+Final Macro Processing ...
+
+Processing Unit <TwoDFilter> :
+	Found 3-bit shift register for signal <filter/D3_7>.
+	Found 3-bit shift register for signal <filter/D3_6>.
+	Found 3-bit shift register for signal <filter/D3_5>.
+	Found 3-bit shift register for signal <filter/D3_4>.
+	Found 3-bit shift register for signal <filter/D3_3>.
+	Found 3-bit shift register for signal <filter/D3_2>.
+	Found 3-bit shift register for signal <filter/D3_1>.
+	Found 3-bit shift register for signal <filter/D3_0>.
+Unit <TwoDFilter> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 262
+ Flip-Flops                                            : 262
+# Shift Registers                                      : 8
+ 3-bit shift register                                  : 8
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : TwoDFilter.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1360
+#      GND                         : 5
+#      INV                         : 15
+#      LUT1                        : 126
+#      LUT2                        : 239
+#      LUT3                        : 36
+#      LUT4                        : 86
+#      LUT5                        : 20
+#      LUT6                        : 29
+#      MUXCY                       : 432
+#      VCC                         : 3
+#      XORCY                       : 369
+# FlipFlops/Latches                : 444
+#      FD                          : 11
+#      FDC                         : 28
+#      FDCE                        : 110
+#      FDE                         : 265
+#      FDP                         : 28
+#      FDPE                        : 2
+# RAMS                             : 2
+#      RAMB18E1                    : 2
+# Shift Registers                  : 8
+#      SRLC16E                     : 8
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 18
+#      IBUF                        : 9
+#      OBUF                        : 9
+
+Device utilization summary:
+---------------------------
+
+Selected Device : xa7a100tcsg324-2i 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             444  out of  126800     0%  
+ Number of Slice LUTs:                  559  out of  63400     0%  
+    Number used as Logic:               551  out of  63400     0%  
+    Number used as Memory:                8  out of  19000     0%  
+       Number used as SRL:                8
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    759
+   Number with an unused Flip Flop:     315  out of    759    41%  
+   Number with an unused LUT:           200  out of    759    26%  
+   Number of fully used LUT-FF pairs:   244  out of    759    32%  
+   Number of unique control sets:        27
+
+IO Utilization: 
+ Number of IOs:                          20
+ Number of bonded IOBs:                  19  out of    210     9%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                1  out of    135     0%  
+    Number using Block RAM only:          1
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK                                | BUFGP                  | 454   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 20.184ns (Maximum Frequency: 49.545MHz)
+   Minimum input arrival time before clock: 0.706ns
+   Maximum output required time after clock: 0.705ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 20.184ns (frequency: 49.545MHz)
+  Total number of paths / destination ports: 869786381166606 / 1041
+-------------------------------------------------------------------------
+Delay:               20.184ns (Levels of Logic = 67)
+  Source:            filter/Sum8_2 (FF)
+  Destination:       filter/div_res_7 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: filter/Sum8_2 to filter/div_res_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.361   0.444  filter/Sum8_2 (filter/Sum8_2)
+     LUT2:I0->O            1   0.097   0.000  filter/Madd_n0186_lut<0> (filter/Madd_n0186_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  filter/Madd_n0186_cy<0> (filter/Madd_n0186_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_n0186_cy<1> (filter/Madd_n0186_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_n0186_cy<2> (filter/Madd_n0186_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_n0186_cy<3> (filter/Madd_n0186_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_n0186_cy<4> (filter/Madd_n0186_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_n0186_cy<5> (filter/Madd_n0186_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_n0186_cy<6> (filter/Madd_n0186_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_n0186_cy<7> (filter/Madd_n0186_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_n0186_cy<8> (filter/Madd_n0186_cy<8>)
+     XORCY:CI->O           2   0.370   0.360  filter/Madd_n0186_xor<9> (filter/n0186<9>)
+     LUT2:I1->O            1   0.097   0.000  filter/Madd_n0189_lut<5> (filter/Madd_n0189_lut<5>)
+     MUXCY:S->O            1   0.353   0.000  filter/Madd_n0189_cy<5> (filter/Madd_n0189_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_n0189_cy<6> (filter/Madd_n0189_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_n0189_cy<7> (filter/Madd_n0189_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_n0189_cy<8> (filter/Madd_n0189_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_n0189_cy<9> (filter/Madd_n0189_cy<9>)
+     XORCY:CI->O           2   0.370   0.360  filter/Madd_n0189_xor<10> (filter/n0189<10>)
+     LUT2:I1->O            1   0.097   0.000  filter/Madd_GND_19_o_GND_19_o_add_11_OUT_lut<2> (filter/Madd_GND_19_o_GND_19_o_add_11_OUT_lut<2>)
+     MUXCY:S->O            1   0.353   0.000  filter/Madd_GND_19_o_GND_19_o_add_11_OUT_cy<2> (filter/Madd_GND_19_o_GND_19_o_add_11_OUT_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_GND_19_o_GND_19_o_add_11_OUT_cy<3> (filter/Madd_GND_19_o_GND_19_o_add_11_OUT_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_GND_19_o_GND_19_o_add_11_OUT_cy<4> (filter/Madd_GND_19_o_GND_19_o_add_11_OUT_cy<4>)
+     XORCY:CI->O           3   0.370   0.451  filter/Madd_GND_19_o_GND_19_o_add_11_OUT_xor<5> (filter/GND_19_o_GND_19_o_add_11_OUT<5>)
+     LUT2:I0->O            1   0.097   0.000  filter/Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT_Madd1_lut<6> (filter/Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT_Madd1_lut<6>)
+     MUXCY:S->O            1   0.353   0.000  filter/Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT_Madd1_cy<6> (filter/Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT_Madd1_cy<6>)
+     XORCY:CI->O           1   0.370   0.355  filter/Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT_Madd1_xor<7> (filter/Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT_7)
+     LUT2:I1->O            1   0.097   0.000  filter/Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT_Madd_lut<7> (filter/Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT_Madd_lut<7>)
+     MUXCY:S->O            1   0.353   0.000  filter/Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT_Madd_cy<7> (filter/Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT_Madd_cy<7>)
+     XORCY:CI->O           1   0.370   0.355  filter/Maddsub_GND_19_o_PWR_21_o_MuLt_12_OUT_Madd_xor<8> (filter/GND_19_o_GND_19_o_sub_14_OUT<8>)
+     LUT1:I0->O            1   0.097   0.000  filter/Madd_GND_19_o_GND_19_o_add_14_OUT_cy<8>_rt (filter/Madd_GND_19_o_GND_19_o_add_14_OUT_cy<8>_rt)
+     MUXCY:S->O            1   0.353   0.000  filter/Madd_GND_19_o_GND_19_o_add_14_OUT_cy<8> (filter/Madd_GND_19_o_GND_19_o_add_14_OUT_cy<8>)
+     XORCY:CI->O           2   0.370   0.444  filter/Madd_GND_19_o_GND_19_o_add_14_OUT_xor<9> (filter/GND_19_o_GND_19_o_add_14_OUT<9>)
+     LUT2:I0->O            1   0.097   0.000  filter/Mmult_n0098_Madd_lut<11> (filter/Mmult_n0098_Madd_lut<11>)
+     MUXCY:S->O            1   0.353   0.000  filter/Mmult_n0098_Madd_cy<11> (filter/Mmult_n0098_Madd_cy<11>)
+     XORCY:CI->O           1   0.370   0.355  filter/Mmult_n0098_Madd_xor<12> (filter/n0098<12>)
+     LUT2:I1->O            1   0.097   0.000  filter/Madd_n0099_Madd_lut<8> (filter/Madd_n0099_Madd_lut<8>)
+     MUXCY:S->O            1   0.353   0.000  filter/Madd_n0099_Madd_cy<8> (filter/Madd_n0099_Madd_cy<8>)
+     XORCY:CI->O           3   0.370   0.451  filter/Madd_n0099_Madd_xor<9> (filter/n0099<9>)
+     LUT2:I0->O            1   0.097   0.000  filter/Madd_n0201_lut<7> (filter/Madd_n0201_lut<7>)
+     MUXCY:S->O            1   0.353   0.000  filter/Madd_n0201_cy<7> (filter/Madd_n0201_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_n0201_cy<8> (filter/Madd_n0201_cy<8>)
+     XORCY:CI->O           2   0.370   0.360  filter/Madd_n0201_xor<9> (filter/n0201<9>)
+     LUT2:I1->O            1   0.097   0.000  filter/Madd_n0204_lut<5> (filter/Madd_n0204_lut<5>)
+     MUXCY:S->O            1   0.353   0.000  filter/Madd_n0204_cy<5> (filter/Madd_n0204_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_n0204_cy<6> (filter/Madd_n0204_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_n0204_cy<7> (filter/Madd_n0204_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_n0204_cy<8> (filter/Madd_n0204_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_n0204_cy<9> (filter/Madd_n0204_cy<9>)
+     XORCY:CI->O           2   0.370   0.360  filter/Madd_n0204_xor<10> (filter/n0204<10>)
+     LUT2:I1->O            1   0.097   0.000  filter/Madd_GND_19_o_GND_19_o_add_20_OUT_lut<2> (filter/Madd_GND_19_o_GND_19_o_add_20_OUT_lut<2>)
+     MUXCY:S->O            1   0.353   0.000  filter/Madd_GND_19_o_GND_19_o_add_20_OUT_cy<2> (filter/Madd_GND_19_o_GND_19_o_add_20_OUT_cy<2>)
+     XORCY:CI->O           3   0.370   0.451  filter/Madd_GND_19_o_GND_19_o_add_20_OUT_xor<3> (filter/GND_19_o_GND_19_o_add_20_OUT<3>)
+     LUT2:I0->O            1   0.097   0.000  filter/Maddsub_GND_19_o_PWR_21_o_MuLt_21_OUT_Madd1_lut<4> (filter/Maddsub_GND_19_o_PWR_21_o_MuLt_21_OUT_Madd1_lut<4>)
+     MUXCY:S->O            1   0.353   0.000  filter/Maddsub_GND_19_o_PWR_21_o_MuLt_21_OUT_Madd1_cy<4> (filter/Maddsub_GND_19_o_PWR_21_o_MuLt_21_OUT_Madd1_cy<4>)
+     XORCY:CI->O           1   0.370   0.355  filter/Maddsub_GND_19_o_PWR_21_o_MuLt_21_OUT_Madd1_xor<5> (filter/Maddsub_GND_19_o_PWR_21_o_MuLt_21_OUT_5)
+     LUT2:I1->O            1   0.097   0.000  filter/Maddsub_GND_19_o_PWR_21_o_MuLt_21_OUT_Madd_lut<5> (filter/Maddsub_GND_19_o_PWR_21_o_MuLt_21_OUT_Madd_lut<5>)
+     MUXCY:S->O            1   0.353   0.000  filter/Maddsub_GND_19_o_PWR_21_o_MuLt_21_OUT_Madd_cy<5> (filter/Maddsub_GND_19_o_PWR_21_o_MuLt_21_OUT_Madd_cy<5>)
+     XORCY:CI->O           1   0.370   0.355  filter/Maddsub_GND_19_o_PWR_21_o_MuLt_21_OUT_Madd_xor<6> (filter/GND_19_o_GND_19_o_sub_23_OUT<6>)
+     LUT1:I0->O            1   0.097   0.000  filter/Madd_GND_19_o_GND_19_o_add_23_OUT_cy<6>_rt (filter/Madd_GND_19_o_GND_19_o_add_23_OUT_cy<6>_rt)
+     MUXCY:S->O            1   0.353   0.000  filter/Madd_GND_19_o_GND_19_o_add_23_OUT_cy<6> (filter/Madd_GND_19_o_GND_19_o_add_23_OUT_cy<6>)
+     XORCY:CI->O           2   0.370   0.444  filter/Madd_GND_19_o_GND_19_o_add_23_OUT_xor<7> (filter/GND_19_o_GND_19_o_add_23_OUT<7>)
+     LUT2:I0->O            1   0.097   0.000  filter/Mmult_n0107_Madd_lut<9> (filter/Mmult_n0107_Madd_lut<9>)
+     MUXCY:S->O            1   0.353   0.000  filter/Mmult_n0107_Madd_cy<9> (filter/Mmult_n0107_Madd_cy<9>)
+     XORCY:CI->O           1   0.370   0.355  filter/Mmult_n0107_Madd_xor<10> (filter/n0107<10>)
+     LUT2:I1->O            1   0.097   0.000  filter/Madd_n0108_Madd_lut<6> (filter/Madd_n0108_Madd_lut<6>)
+     MUXCY:S->O            0   0.353   0.000  filter/Madd_n0108_Madd_cy<6> (filter/Madd_n0108_Madd_cy<6>)
+     XORCY:CI->O           1   0.370   0.000  filter/Madd_n0108_Madd_xor<7> (filter/n0108<7>)
+     FDE:D                     0.008          filter/div_res_7
+    ----------------------------------------
+    Total                     20.184ns (13.926ns logic, 6.258ns route)
+                                       (69.0% logic, 31.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+  Total number of paths / destination ports: 12 / 12
+-------------------------------------------------------------------------
+Offset:              0.706ns (Levels of Logic = 1)
+  Source:            RESET (PAD)
+  Destination:       STATE_FSM_FFd1 (FF)
+  Destination Clock: CLK rising
+
+  Data Path: RESET to STATE_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   0.001   0.356  RESET_IBUF (RESET_IBUF)
+     FDC:CLR                   0.349          STATE_FSM_FFd1
+    ----------------------------------------
+    Total                      0.706ns (0.350ns logic, 0.356ns route)
+                                       (49.6% logic, 50.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+  Total number of paths / destination ports: 9 / 9
+-------------------------------------------------------------------------
+Offset:              0.705ns (Levels of Logic = 1)
+  Source:            RESULT_AVAILABLE (FF)
+  Destination:       RESULT_AVAILABLE (PAD)
+  Source Clock:      CLK rising
+
+  Data Path: RESULT_AVAILABLE to RESULT_AVAILABLE
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.361   0.344  RESULT_AVAILABLE (RESULT_AVAILABLE_OBUF)
+     OBUF:I->O                 0.000          RESULT_AVAILABLE_OBUF (RESULT_AVAILABLE)
+    ----------------------------------------
+    Total                      0.705ns (0.361ns logic, 0.344ns route)
+                                       (51.2% logic, 48.8% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |   20.184|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 68.00 secs
+Total CPU time to Xst completion: 68.04 secs
+ 
+--> 
+
+Total memory usage is 788340 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   43 (   0 filtered)
+Number of infos    :   29 (   0 filtered)
+

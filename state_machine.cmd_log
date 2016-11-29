@@ -1,0 +1,49 @@
+xst -intstyle ise -ifn "C:/Users/av721115/realTimeFiltering/state_machine.xst" -ofn "C:/Users/av721115/realTimeFiltering/state_machine.syr" 
+xst -intstyle ise -ifn "C:/Users/av721115/realTimeFiltering/state_machine.xst" -ofn "C:/Users/av721115/realTimeFiltering/state_machine.syr" 
+netgen -intstyle ise -ar Structure -tm state_machine -w -dir netgen/synthesis -ofmt vhdl -sim state_machine.ngc state_machine_synthesis.vhd 
+xst -intstyle ise -ifn "C:/Users/av721115/realTimeFiltering/state_machine.xst" -ofn "C:/Users/av721115/realTimeFiltering/state_machine.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc state_machine.ucf -p xc7a100t-csg324-3 state_machine.ngc state_machine.ngd  
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc state_machine.ucf -p xc7a100t-csg324-3 state_machine.ngc state_machine.ngd  
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc state_machine.ucf -p xc7a100t-csg324-3 state_machine.ngc state_machine.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o state_machine_map.ncd state_machine.ngd state_machine.pcf 
+par -w -intstyle ise -ol high -mt off state_machine_map.ncd state_machine.ncd state_machine.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml state_machine.twx state_machine.ncd -o state_machine.twr state_machine.pcf -ucf state_machine.ucf 
+bitgen -intstyle ise -f state_machine.ut state_machine.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc state_machine.ucf -p xc7a100t-csg324-3 state_machine.ngc state_machine.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o state_machine_map.ncd state_machine.ngd state_machine.pcf 
+par -w -intstyle ise -ol high -mt off state_machine_map.ncd state_machine.ncd state_machine.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml state_machine.twx state_machine.ncd -o state_machine.twr state_machine.pcf -ucf state_machine.ucf 
+bitgen -intstyle ise -f state_machine.ut state_machine.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc state_machine.ucf -p xc7a100t-csg324-3 state_machine.ngc state_machine.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o state_machine_map.ncd state_machine.ngd state_machine.pcf 
+par -w -intstyle ise -ol high -mt off state_machine_map.ncd state_machine.ncd state_machine.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml state_machine.twx state_machine.ncd -o state_machine.twr state_machine.pcf -ucf state_machine.ucf 
+bitgen -intstyle ise -f state_machine.ut state_machine.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc state_machine.ucf -uc Nexys4DDR_Master.ucf -p xc7a100t-csg324-3 state_machine.ngc state_machine.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o state_machine_map.ncd state_machine.ngd state_machine.pcf 
+par -w -intstyle ise -ol high -mt off state_machine_map.ncd state_machine.ncd state_machine.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml state_machine.twx state_machine.ncd -o state_machine.twr state_machine.pcf -ucf state_machine.ucf -ucf Nexys4DDR_Master.ucf 
+bitgen -intstyle ise -f state_machine.ut state_machine.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc state_machine.ucf -p xc7a100t-csg324-3 state_machine.ngc state_machine.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o state_machine_map.ncd state_machine.ngd state_machine.pcf 
+par -w -intstyle ise -ol high -mt off state_machine_map.ncd state_machine.ncd state_machine.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml state_machine.twx state_machine.ncd -o state_machine.twr state_machine.pcf -ucf state_machine.ucf 
+bitgen -intstyle ise -f state_machine.ut state_machine.ncd 
+xst -intstyle ise -ifn "C:/Users/av721115/realTimeFiltering/state_machine.xst" -ofn "C:/Users/av721115/realTimeFiltering/state_machine.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc state_machine.ucf -p xc7a100t-csg324-3 state_machine.ngc state_machine.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o state_machine_map.ncd state_machine.ngd state_machine.pcf 
+par -w -intstyle ise -ol high -mt off state_machine_map.ncd state_machine.ncd state_machine.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml state_machine.twx state_machine.ncd -o state_machine.twr state_machine.pcf -ucf state_machine.ucf 
+bitgen -intstyle ise -f state_machine.ut state_machine.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc state_machine.ucf -p xc7a100t-csg324-3 state_machine.ngc state_machine.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o state_machine_map.ncd state_machine.ngd state_machine.pcf 
+par -w -intstyle ise -ol high -mt off state_machine_map.ncd state_machine.ncd state_machine.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml state_machine.twx state_machine.ncd -o state_machine.twr state_machine.pcf -ucf state_machine.ucf 
+bitgen -intstyle ise -f state_machine.ut state_machine.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc state_machine.ucf -p xc7a100t-csg324-3 state_machine.ngc state_machine.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o state_machine_map.ncd state_machine.ngd state_machine.pcf 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc state_machine.ucf -p xc7a100t-csg324-3 state_machine.ngc state_machine.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o state_machine_map.ncd state_machine.ngd state_machine.pcf 
+par -w -intstyle ise -ol high -mt off state_machine_map.ncd state_machine.ncd state_machine.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml state_machine.twx state_machine.ncd -o state_machine.twr state_machine.pcf -ucf state_machine.ucf 
+bitgen -intstyle ise -f state_machine.ut state_machine.ncd 

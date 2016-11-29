@@ -1,0 +1,29 @@
+Command line:
+   tb_TwoDFilter_laplacian_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  60203
+
+Mon Nov 28 21:55:08 2016
+
+
+ Elaboration Time: 0.156001 sec
+
+ Current Memory Usage: 697.639 Meg
+
+ Total Signals          : 1438
+ Total Nets             : 26246
+ Total Signal Drivers   : 583
+ Total Blocks           : 208
+ Total Primitive Blocks : 124
+ Total Processes        : 300
+ Total Traceable Variables  : 1130
+ Total Scalar Nets and Variables : 29946
+Total Line Count : 626
+
+ Total Simulation Time: 4.33683 sec
+
+ Current Memory Usage: 697.639 Meg
+
+Mon Nov 28 21:58:29 2016
+

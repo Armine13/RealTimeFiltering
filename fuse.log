@@ -1,13 +1,16 @@
-Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/fifo_test_isim_beh.exe" -prj "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/fifo_test_beh.prj" "work.fifo_test" 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/tb_TwoDFilter_sobel_isim_beh.exe -prj C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/tb_TwoDFilter_sobel_beh.prj work.tb_TwoDFilter_sobel 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
 Parsing VHDL file "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/ipcore_dir/fifo_8x1024.vhd" into library work
-Parsing VHDL file "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/PROCESS_NOFILTER.vhd" into library work
+Parsing VHDL file "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/ipcore_dir/multiplier.vhd" into library work
+Parsing VHDL file "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/ipcore_dir/square_multiplier.vhd" into library work
+Parsing VHDL file "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/filter_kernel.vhd" into library work
+Parsing VHDL file "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/sobel_filter.vhd" into library work
 Parsing VHDL file "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/cache_mem.vhd" into library work
-Parsing VHDL file "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/TwoDFilter.vhd" into library work
-Parsing VHDL file "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/fifo_test.vhd" into library work
+Parsing VHDL file "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/TwoDFilter_sobel.vhd" into library work
+Parsing VHDL file "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/tb_TwoDFilter_sobel.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
@@ -22,12 +25,20 @@ Compiling architecture behavioral of entity fifo_generator_v9_3_conv [\fifo_gene
 Compiling architecture behavioral of entity fifo_generator_v9_3 [\fifo_generator_v9_3(1,0,10,"Bla...]
 Compiling architecture fifo_8x1024_a of entity fifo_8x1024 [fifo_8x1024_default]
 Compiling architecture behavioral of entity cache_mem [cache_mem_default]
-Compiling architecture behavioral of entity PROCESS_NOFILTER [process_nofilter_default]
-Compiling architecture behavioral of entity TwoDFilter [twodfilter_default]
-Compiling architecture behavioral of entity fifo_test
+Compiling package std_logic_signed
+Compiling package bip_utils_pkg_v2_0
+Compiling package mult_gen_pkg_v11_2
+Compiling architecture behavioral of entity mult_gen_v11_2 [\mult_gen_v11_2(0,0,"aartix7",16...]
+Compiling architecture square_multiplier_a of entity square_multiplier [square_multiplier_default]
+Compiling architecture behavioral of entity mult_gen_v11_2 [\mult_gen_v11_2(0,0,"aartix7",8,...]
+Compiling architecture multiplier_a of entity multiplier [multiplier_default]
+Compiling architecture behavioral of entity filter_kernel [filter_kernel_default]
+Compiling architecture behavioral of entity sobel_filter [sobel_filter_default]
+Compiling architecture behavioral of entity TwoDFilter_sobel [twodfilter_sobel_default]
+Compiling architecture behavioral of entity tb_twodfilter_sobel
 Time Resolution for simulation is 1ps.
-Waiting for 7 sub-compilation(s) to finish...
-Compiled 22 VHDL Units
-Built simulation executable C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/fifo_test_isim_beh.exe
-Fuse Memory Usage: 43408 KB
-Fuse CPU Usage: 2885 ms
+Waiting for 15 sub-compilation(s) to finish...
+Compiled 35 VHDL Units
+Built simulation executable C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/tb_TwoDFilter_sobel_isim_beh.exe
+Fuse Memory Usage: 48256 KB
+Fuse CPU Usage: 3915 ms

@@ -1,0 +1,8 @@
+vhdl work "ipcore_dir/fifo_8x1024.vhd"
+vhdl work "ipcore_dir/multiplier.vhd"
+vhdl work "ipcore_dir/square_multiplier.vhd"
+vhdl work "filter_kernel.vhd"
+vhdl work "sobel_filter.vhd"
+vhdl work "cache_mem.vhd"
+vhdl work "TwoDFilter_sobel.vhd"
+vhdl work "tb_TwoDFilter_sobel.vhd"

@@ -1,0 +1,6 @@
+vhdl work "ipcore_dir/fifo_8x1024.vhd"
+vhdl work "ipcore_dir/multiplier.vhd"
+vhdl work "filter_kernel.vhd"
+vhdl work "laplacian_filter.vhd"
+vhdl work "cache_mem.vhd"
+vhdl work "TwoDFilter_laplacian.vhd"

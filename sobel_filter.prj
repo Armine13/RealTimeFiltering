@@ -1,0 +1,3 @@
+vhdl work "ipcore_dir/multiplier.vhd"
+vhdl work "filter_kernel.vhd"
+vhdl work "sobel_filter.vhd"

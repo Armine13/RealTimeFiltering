@@ -1,0 +1,4 @@
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/TwoDFilter.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/TwoDFilter.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/TwoDFilter.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/TwoDFilter.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/TwoDFilter.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/TwoDFilter.syr" 
+netgen -intstyle ise -ar Structure -tm TwoDFilter -w -dir netgen/synthesis -ofmt vhdl -sim TwoDFilter.ngc TwoDFilter_synthesis.vhd 

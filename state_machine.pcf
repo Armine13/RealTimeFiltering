@@ -1,0 +1,22 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Nov 18 12:02:22 2016
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "ST_OUT<0>" LOCATE = SITE "T16" LEVEL 1;
+COMP "S1" LOCATE = SITE "H17" LEVEL 1;
+COMP "S2" LOCATE = SITE "K15" LEVEL 1;
+COMP "ST_OUT<1>" LOCATE = SITE "V15" LEVEL 1;
+COMP "ST_OUT<2>" LOCATE = SITE "V14" LEVEL 1;
+COMP "ST_OUT<3>" LOCATE = SITE "V12" LEVEL 1;
+COMP "ST_OUT<4>" LOCATE = SITE "V11" LEVEL 1;
+COMP "CLK" LOCATE = SITE "E3" LEVEL 1;
+COMP "RESET" LOCATE = SITE "N17" LEVEL 1;
+COMP "a" LOCATE = SITE "L16" LEVEL 1;
+COMP "b" LOCATE = SITE "J15" LEVEL 1;
+TIMEGRP sys_clk_pin = BEL "current_state_FSM_FFd1" BEL
+        "current_state_FSM_FFd3" BEL "current_state_FSM_FFd2" BEL
+        "CLK_BUFGP/BUFG";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
+SCHEMATIC END;
+

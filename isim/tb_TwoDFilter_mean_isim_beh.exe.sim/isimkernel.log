@@ -1,0 +1,29 @@
+Command line:
+   tb_TwoDFilter_mean_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  60220
+
+Mon Nov 28 21:59:02 2016
+
+
+ Elaboration Time: 0.171601 sec
+
+ Current Memory Usage: 697.422 Meg
+
+ Total Signals          : 1148
+ Total Nets             : 19661
+ Total Signal Drivers   : 467
+ Total Blocks           : 78
+ Total Primitive Blocks : 41
+ Total Processes        : 200
+ Total Traceable Variables  : 651
+ Total Scalar Nets and Variables : 21432
+Total Line Count : 451
+
+ Total Simulation Time: 6.87964 sec
+
+ Current Memory Usage: 1011.99 Meg
+
+Mon Nov 28 21:59:51 2016
+

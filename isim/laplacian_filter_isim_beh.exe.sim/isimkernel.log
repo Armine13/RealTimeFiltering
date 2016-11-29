@@ -1,0 +1,29 @@
+Command line:
+   laplacian_filter_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  58818
+
+Mon Nov 28 19:13:30 2016
+
+
+ Elaboration Time: 0.140402 sec
+
+ Current Memory Usage: 681.001 Meg
+
+ Total Signals          : 317
+ Total Nets             : 6801
+ Total Signal Drivers   : 131
+ Total Blocks           : 136
+ Total Primitive Blocks : 89
+ Total Processes        : 101
+ Total Traceable Variables  : 494
+ Total Scalar Nets and Variables : 9231
+Total Line Count : 193
+
+ Total Simulation Time: 0.156002 sec
+
+ Current Memory Usage: 681.001 Meg
+
+Mon Nov 28 19:13:53 2016
+

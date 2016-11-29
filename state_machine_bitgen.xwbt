@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\av721115\realTimeFiltering\state_machine.ncd
+OUTFILE=C:\Users\av721115\realTimeFiltering\state_machine.bit
+FAMILY=Artix7
+PART=xc7a100t-3csg324
+WORKINGDIR=C:\Users\av721115\realTimeFiltering
+LICENSE=ISE
+USER_INFO=174111694_174111695_210608354_843
