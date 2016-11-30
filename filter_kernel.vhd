@@ -78,20 +78,7 @@ COMPONENT multiplier
  END COMPONENT;
  
  signal ce : std_logic := '0';
---
--- signal Sum1 :std_logic_vector (8 downto 0) := (others => '0');
--- signal Sum2 :std_logic_vector (8 downto 0):= (others => '0');
--- signal Sum3 :std_logic_vector (8 downto 0):= (others => '0');
--- signal Sum4 :std_logic_vector (8 downto 0):= (others => '0');
--- signal D1 :std_logic_vector (7 downto 0):= (others => '0');
--- signal D2 :std_logic_vector (7 downto 0):= (others => '0');
--- signal D3 :std_logic_vector (7 downto 0):= (others => '0');
--- signal Sum5 :std_logic_vector (9 downto 0):= (others => '0');
--- signal Sum6 :std_logic_vector (9 downto 0):= (others => '0');
--- signal Sum7 :std_logic_vector (10 downto 0):= (others => '0');
--- signal Sum8 :std_logic_vector (11 downto 0):= (others => '0');
 
- --signal cntr : integer := 0;
 begin
 
 mult0: multiplier PORT MAP (

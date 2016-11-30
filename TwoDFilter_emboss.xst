@@ -1,6 +1,9 @@
-set -tmpdir "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/xst/projnav.tmp"
-set -xsthdpdir "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/xst"
-run -compileonly yes
+set -tmpdir "xst/projnav.tmp"
+set -xsthdpdir "xst"
+run
+-ifn TwoDFilter_emboss.prj
+-ofn TwoDFilter_emboss
+-ofmt NGC
 -p xa7a100t-2I-csg324
 -top TwoDFilter_emboss
 -opt_mode Speed
@@ -48,4 +51,3 @@ run -compileonly yes
 -iob Auto
 -equivalent_register_removal YES
 -slice_utilization_ratio_maxmargin 5
--ifn TwoDFilter_emboss.prj

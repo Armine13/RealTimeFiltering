@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\Imag_Proc_top.ncd
+OUTFILE=C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\Imag_Proc_top.bit
+FAMILY=Automotive Artix7
+PART=xa7a100t-2icsg324
+WORKINGDIR=C:\Users\Mins\Documents\Xilinx\RealTimeFiltering
+LICENSE=WebPack
+USER_INFO=211021352_0_0_231

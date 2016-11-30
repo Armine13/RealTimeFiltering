@@ -1,0 +1,23 @@
+INFO:sim:172 - Generating IP...
+Applying current project options...
+Finished applying current project options.
+Resolving generics for 'imgRom_pixGL8b'...
+ERROR:sim - Unable to find
+ERROR:sim -    C:\Users\julien\Documents\Enseignement\VGA\lena_8btis.coe
+ERROR:sim -    Coregen is looking for
+ERROR:sim -    C:\Users\julien\Documents\Enseignement\VGA\lena_8btis.coe
+ERROR:sim - Unable to find
+ERROR:sim -    C:\Users\julien\Documents\Enseignement\VGA\lena_8btis.coe
+ERROR:sim -    Coregen is looking for
+ERROR:sim -    C:\Users\julien\Documents\Enseignement\VGA\lena_8btis.coe
+ERROR:sim - IP initializer could not set IP core parameters on IP model
+ERROR:sim - Unable to find
+ERROR:sim -    C:\Users\julien\Documents\Enseignement\VGA\lena_8btis.coe
+ERROR:sim -    Coregen is looking for
+ERROR:sim -    C:\Users\julien\Documents\Enseignement\VGA\lena_8btis.coe
+ERROR:sim - Failed to initialize IP model.
+ERROR:sim - Failed executing Tcl generator.
+ERROR:sim - Failed to generate 'imgRom_pixGL8b'.  Failed executing Tcl
+   generator.
+
+Wrote CGP file for project 'imgRom_pixGL8b'.

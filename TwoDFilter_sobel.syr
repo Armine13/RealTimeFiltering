@@ -1,0 +1,982 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.27 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.27 secs
+ 
+--> Reading design: TwoDFilter_sobel.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "TwoDFilter_sobel.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "TwoDFilter_sobel"
+Output Format                      : NGC
+Target Device                      : xa7a100t-2I-csg324
+
+---- Source Options
+Top Module Name                    : TwoDFilter_sobel
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\ipcore_dir\fifo_8x1024.vhd" into library work
+Parsing entity <fifo_8x1024>.
+Parsing architecture <fifo_8x1024_a> of entity <fifo_8x1024>.
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\ipcore_dir\multiplier.vhd" into library work
+Parsing entity <multiplier>.
+Parsing architecture <multiplier_a> of entity <multiplier>.
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\ipcore_dir\square_multiplier.vhd" into library work
+Parsing entity <square_multiplier>.
+Parsing architecture <square_multiplier_a> of entity <square_multiplier>.
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter_kernel.vhd" into library work
+Parsing entity <filter_kernel>.
+Parsing architecture <Behavioral> of entity <filter_kernel>.
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\sobel_filter.vhd" into library work
+Parsing entity <sobel_filter>.
+Parsing architecture <Behavioral> of entity <sobel_filter>.
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" into library work
+Parsing entity <cache_mem>.
+Parsing architecture <Behavioral> of entity <cache_mem>.
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\TwoDFilter_sobel.vhd" into library work
+Parsing entity <TwoDFilter_sobel>.
+Parsing architecture <Behavioral> of entity <twodfilter_sobel>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <TwoDFilter_sobel> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <cache_mem> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 70: Using initial value '1' for wr_en1 since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 71: Using initial value "0001111010" for prog_full_thresh since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 80: Using initial value '1' for wr_en2 since it is never assigned
+
+Elaborating entity <fifo_8x1024> (architecture <fifo_8x1024_a>) from library <work>.
+WARNING:HDLCompiler:634 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 86: Net <rst> does not have a driver.
+
+Elaborating entity <sobel_filter> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <square_multiplier> (architecture <square_multiplier_a>) from library <work>.
+
+Elaborating entity <filter_kernel> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <multiplier> (architecture <multiplier_a>) from library <work>.
+WARNING:HDLCompiler:92 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\sobel_filter.vhd" Line 263: enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\TwoDFilter_sobel.vhd" Line 131: reset should be on the sensitivity list of the process
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <TwoDFilter_sobel>.
+    Related source file is "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\TwoDFilter_sobel.vhd".
+INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\TwoDFilter_sobel.vhd" line 98: Output port <EMPTY> of the instance <cache> is unconnected or connected to loadless signal.
+    Found 3-bit register for signal <STATE>.
+    Found 1-bit register for signal <enable_filter>.
+    Found 1-bit register for signal <RESULT_AVAILABLE>.
+    Found 32-bit register for signal <counter>.
+INFO:Xst:1799 - State s4 is never reached in FSM <STATE>.
+INFO:Xst:1799 - State s5 is never reached in FSM <STATE>.
+    Found finite state machine <FSM_0> for signal <STATE>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 4                                              |
+    | Clock              | CLK (rising_edge)                              |
+    | Reset              | RESET (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | s1                                             |
+    | Power Up State     | s1                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit adder for signal <counter[31]_GND_3_o_add_8_OUT> created at line 184.
+    Found 32-bit comparator greater for signal <n0002> created at line 166
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  34 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   1 Finite State Machine(s).
+Unit <TwoDFilter_sobel> synthesized.
+
+Synthesizing Unit <cache_mem>.
+    Related source file is "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd".
+INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 106: Output port <data_count> of the instance <fifo1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 106: Output port <empty> of the instance <fifo1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 120: Output port <data_count> of the instance <fifo2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 120: Output port <empty> of the instance <fifo2> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <EMPTY> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <rst> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 32-bit register for signal <counter>.
+    Found 8-bit register for signal <p0_temp>.
+    Found 8-bit register for signal <p1_temp>.
+    Found 8-bit register for signal <p2_temp>.
+    Found 8-bit register for signal <din2>.
+    Found 8-bit register for signal <p3_temp>.
+    Found 8-bit register for signal <p4_temp>.
+    Found 8-bit register for signal <p5_temp>.
+    Found 8-bit register for signal <din1>.
+    Found 8-bit register for signal <p6_temp>.
+    Found 8-bit register for signal <p7_temp>.
+    Found 8-bit register for signal <p8_temp>.
+    Found 1-bit register for signal <PIXEL_READY>.
+    Found 32-bit adder for signal <counter[31]_GND_4_o_add_1_OUT> created at line 145.
+    Found 32-bit comparator greater for signal <counter[31]_GND_4_o_LessThan_1_o> created at line 142
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred 121 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <cache_mem> synthesized.
+
+Synthesizing Unit <sobel_filter>.
+    Related source file is "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\sobel_filter.vhd".
+    Found 13-bit register for signal <Sum4_1>.
+    Found 13-bit register for signal <Sum3_1>.
+    Found 13-bit register for signal <Sum2_1>.
+    Found 13-bit register for signal <Sum1_1>.
+    Found 14-bit register for signal <Sum5_1>.
+    Found 14-bit register for signal <Sum6_1>.
+    Found 12-bit register for signal <D2_1>.
+    Found 15-bit register for signal <Sum7_1>.
+    Found 12-bit register for signal <D3_1>.
+    Found 16-bit register for signal <Sum8_1>.
+    Found 12-bit register for signal <D1_2>.
+    Found 13-bit register for signal <Sum4_2>.
+    Found 13-bit register for signal <Sum3_2>.
+    Found 13-bit register for signal <Sum2_2>.
+    Found 13-bit register for signal <Sum1_2>.
+    Found 14-bit register for signal <Sum5_2>.
+    Found 14-bit register for signal <Sum6_2>.
+    Found 12-bit register for signal <D2_2>.
+    Found 15-bit register for signal <Sum7_2>.
+    Found 12-bit register for signal <D3_2>.
+    Found 16-bit register for signal <Sum8_2>.
+    Found 16-bit register for signal <result_long>.
+    Found 8-bit register for signal <Filter_out>.
+    Found 1-bit register for signal <Result_Available>.
+    Found 32-bit register for signal <cntr>.
+    Found 12-bit register for signal <D1_1>.
+    Found 19-bit subtractor for signal <n0207> created at line 68.
+    Found 13-bit adder for signal <M2_1[11]_M1_1[11]_add_0_OUT> created at line 269.
+    Found 13-bit adder for signal <M4_1[11]_M3_1[11]_add_1_OUT> created at line 270.
+    Found 13-bit adder for signal <M6_1[11]_M5_1[11]_add_2_OUT> created at line 271.
+    Found 13-bit adder for signal <M8_1[11]_M7_1[11]_add_3_OUT> created at line 272.
+    Found 14-bit adder for signal <Sum1_1[12]_Sum2_1[12]_add_4_OUT> created at line 274.
+    Found 14-bit adder for signal <Sum3_1[12]_Sum4_1[12]_add_5_OUT> created at line 275.
+    Found 15-bit adder for signal <Sum5_1[13]_Sum6_1[13]_add_6_OUT> created at line 278.
+    Found 16-bit adder for signal <Sum7_1[14]_D3_1[11]_add_7_OUT> created at line 281.
+    Found 13-bit adder for signal <M2_2[11]_M1_2[11]_add_8_OUT> created at line 287.
+    Found 13-bit adder for signal <M4_2[11]_M3_2[11]_add_9_OUT> created at line 288.
+    Found 13-bit adder for signal <M6_2[11]_M5_2[11]_add_10_OUT> created at line 289.
+    Found 13-bit adder for signal <M8_2[11]_M7_2[11]_add_11_OUT> created at line 290.
+    Found 14-bit adder for signal <Sum1_2[12]_Sum2_2[12]_add_12_OUT> created at line 292.
+    Found 14-bit adder for signal <Sum3_2[12]_Sum4_2[12]_add_13_OUT> created at line 293.
+    Found 15-bit adder for signal <Sum5_2[13]_Sum6_2[13]_add_14_OUT> created at line 296.
+    Found 16-bit adder for signal <Sum7_2[14]_D3_2[11]_add_15_OUT> created at line 299.
+    Found 32-bit adder for signal <G_1[31]_G_2[31]_add_16_OUT> created at line 303.
+    Found 18-bit adder for signal <GND_17_o_GND_17_o_add_18_OUT> created at line 66.
+    Found 18-bit adder for signal <GND_17_o_GND_17_o_add_21_OUT> created at line 66.
+    Found 18-bit adder for signal <GND_17_o_GND_17_o_add_24_OUT> created at line 66.
+    Found 18-bit adder for signal <GND_17_o_GND_17_o_add_27_OUT> created at line 66.
+    Found 18-bit adder for signal <GND_17_o_GND_17_o_add_30_OUT> created at line 66.
+    Found 18-bit adder for signal <GND_17_o_GND_17_o_add_33_OUT> created at line 66.
+    Found 18-bit adder for signal <GND_17_o_GND_17_o_add_36_OUT> created at line 66.
+    Found 18-bit adder for signal <GND_17_o_GND_17_o_add_39_OUT> created at line 66.
+    Found 18-bit adder for signal <GND_17_o_GND_17_o_add_42_OUT> created at line 66.
+    Found 18-bit adder for signal <GND_17_o_GND_17_o_add_45_OUT> created at line 66.
+    Found 18-bit adder for signal <GND_17_o_GND_17_o_add_48_OUT> created at line 66.
+    Found 18-bit adder for signal <GND_17_o_GND_17_o_add_51_OUT> created at line 66.
+    Found 18-bit adder for signal <GND_17_o_GND_17_o_add_54_OUT> created at line 66.
+    Found 18-bit adder for signal <GND_17_o_GND_17_o_add_57_OUT> created at line 66.
+    Found 18-bit adder for signal <GND_17_o_GND_17_o_add_60_OUT> created at line 66.
+    Found 32-bit adder for signal <cntr[31]_GND_17_o_add_114_OUT> created at line 327.
+    Found 18-bit subtractor for signal <GND_17_o_GND_17_o_sub_20_OUT<17:0>> created at line 68.
+    Found 18-bit subtractor for signal <GND_17_o_GND_17_o_sub_23_OUT<17:0>> created at line 68.
+    Found 18-bit subtractor for signal <GND_17_o_GND_17_o_sub_26_OUT<17:0>> created at line 68.
+    Found 18-bit subtractor for signal <GND_17_o_GND_17_o_sub_29_OUT<17:0>> created at line 68.
+    Found 18-bit subtractor for signal <GND_17_o_GND_17_o_sub_32_OUT<17:0>> created at line 68.
+    Found 18-bit subtractor for signal <GND_17_o_GND_17_o_sub_35_OUT<17:0>> created at line 68.
+    Found 18-bit subtractor for signal <GND_17_o_GND_17_o_sub_38_OUT<17:0>> created at line 68.
+    Found 18-bit subtractor for signal <GND_17_o_GND_17_o_sub_41_OUT<17:0>> created at line 68.
+    Found 18-bit subtractor for signal <GND_17_o_GND_17_o_sub_44_OUT<17:0>> created at line 68.
+    Found 18-bit subtractor for signal <GND_17_o_GND_17_o_sub_47_OUT<17:0>> created at line 68.
+    Found 18-bit subtractor for signal <GND_17_o_GND_17_o_sub_50_OUT<17:0>> created at line 68.
+    Found 18-bit subtractor for signal <GND_17_o_GND_17_o_sub_53_OUT<17:0>> created at line 68.
+    Found 18-bit subtractor for signal <GND_17_o_GND_17_o_sub_56_OUT<17:0>> created at line 68.
+    Found 18-bit subtractor for signal <GND_17_o_GND_17_o_sub_59_OUT<17:0>> created at line 68.
+    Found 18-bit subtractor for signal <GND_17_o_GND_17_o_sub_62_OUT<17:0>> created at line 68.
+    Found 16-bit comparator greater for signal <GND_17_o_result_long[15]_LessThan_64_o> created at line 305
+    Summary:
+	inferred  34 Adder/Subtractor(s).
+	inferred 351 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <sobel_filter> synthesized.
+
+Synthesizing Unit <filter_kernel>.
+    Related source file is "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter_kernel.vhd".
+    Summary:
+	no macro.
+Unit <filter_kernel> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 36
+ 13-bit adder                                          : 8
+ 14-bit adder                                          : 4
+ 15-bit adder                                          : 2
+ 16-bit adder                                          : 2
+ 18-bit addsub                                         : 15
+ 19-bit subtractor                                     : 1
+ 32-bit adder                                          : 4
+# Registers                                            : 42
+ 1-bit register                                        : 4
+ 12-bit register                                       : 6
+ 13-bit register                                       : 8
+ 14-bit register                                       : 4
+ 15-bit register                                       : 2
+ 16-bit register                                       : 3
+ 32-bit register                                       : 3
+ 8-bit register                                        : 12
+# Comparators                                          : 3
+ 16-bit comparator greater                             : 1
+ 32-bit comparator greater                             : 2
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst - The specified part-type was not generated at build time. XST is loading the full part-type and will therefore consume more CPU and memory.
+Loading device for application Rf_Device from file '7a100t.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
+Reading core <ipcore_dir/fifo_8x1024.ngc>.
+Reading core <ipcore_dir/square_multiplier.ngc>.
+Reading Secure Unit <blk00000001>.
+Reading core <ipcore_dir/multiplier.ngc>.
+Reading Secure Unit <blk00000001>.
+Loading core <fifo_8x1024> for timing and area information for instance <fifo1>.
+Loading core <fifo_8x1024> for timing and area information for instance <fifo2>.
+Loading core <square_multiplier> for timing and area information for instance <squarer1>.
+Loading core <square_multiplier> for timing and area information for instance <squarer2>.
+Loading core <multiplier> for timing and area information for instance <mult0>.
+Loading core <multiplier> for timing and area information for instance <mult1>.
+Loading core <multiplier> for timing and area information for instance <mult2>.
+Loading core <multiplier> for timing and area information for instance <mult3>.
+Loading core <multiplier> for timing and area information for instance <mult4>.
+Loading core <multiplier> for timing and area information for instance <mult5>.
+Loading core <multiplier> for timing and area information for instance <mult6>.
+Loading core <multiplier> for timing and area information for instance <mult7>.
+Loading core <multiplier> for timing and area information for instance <mult8>.
+Loading device for application Rf_Device from file '7a100t.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
+
+Synthesizing (advanced) Unit <TwoDFilter_sobel>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <TwoDFilter_sobel> synthesized (advanced).
+
+Synthesizing (advanced) Unit <cache_mem>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <cache_mem> synthesized (advanced).
+
+Synthesizing (advanced) Unit <sobel_filter>.
+The following registers are absorbed into counter <cntr>: 1 register on signal <cntr>.
+Unit <sobel_filter> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 33
+ 13-bit adder                                          : 8
+ 14-bit adder                                          : 4
+ 15-bit adder                                          : 2
+ 16-bit adder                                          : 2
+ 18-bit addsub                                         : 15
+ 18-bit subtractor                                     : 1
+ 32-bit adder                                          : 1
+# Counters                                             : 3
+ 32-bit up counter                                     : 3
+# Registers                                            : 410
+ Flip-Flops                                            : 410
+# Comparators                                          : 3
+ 16-bit comparator greater                             : 1
+ 32-bit comparator greater                             : 2
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <STATE[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ s1    | 00
+ s2    | 01
+ s3    | 10
+ s4    | unreached
+ s5    | unreached
+-------------------
+
+Optimizing unit <TwoDFilter_sobel> ...
+
+Optimizing unit <cache_mem> ...
+
+Optimizing unit <sobel_filter> ...
+WARNING:Xst:1293 - FF/Latch <cache/counter_9> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_10> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_11> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_12> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_13> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_14> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_15> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_16> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_17> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_18> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_19> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_20> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_21> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_22> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_23> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_24> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_25> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_26> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_27> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_28> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_29> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_30> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cache/counter_31> has a constant value of 0 in block <TwoDFilter_sobel>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block TwoDFilter_sobel, actual ratio is 2.
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <cache/fifo2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <cache/fifo2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <cache/fifo2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <cache/fifo1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <cache/fifo1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <cache/fifo1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <cache/fifo2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <cache/fifo2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <cache/fifo2> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <cache/fifo1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <cache/fifo1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> in Unit <cache/fifo1> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> 
+
+Final Macro Processing ...
+
+Processing Unit <TwoDFilter_sobel> :
+	Found 3-bit shift register for signal <filter/D3_2_11>.
+	Found 3-bit shift register for signal <filter/D3_2_10>.
+	Found 3-bit shift register for signal <filter/D3_2_9>.
+	Found 3-bit shift register for signal <filter/D3_2_8>.
+	Found 3-bit shift register for signal <filter/D3_2_7>.
+	Found 3-bit shift register for signal <filter/D3_2_6>.
+	Found 3-bit shift register for signal <filter/D3_2_5>.
+	Found 3-bit shift register for signal <filter/D3_2_4>.
+	Found 3-bit shift register for signal <filter/D3_2_3>.
+	Found 3-bit shift register for signal <filter/D3_2_2>.
+	Found 3-bit shift register for signal <filter/D3_2_1>.
+	Found 3-bit shift register for signal <filter/D3_2_0>.
+	Found 3-bit shift register for signal <filter/D3_1_11>.
+	Found 3-bit shift register for signal <filter/D3_1_10>.
+	Found 3-bit shift register for signal <filter/D3_1_9>.
+	Found 3-bit shift register for signal <filter/D3_1_8>.
+	Found 3-bit shift register for signal <filter/D3_1_7>.
+	Found 3-bit shift register for signal <filter/D3_1_6>.
+	Found 3-bit shift register for signal <filter/D3_1_5>.
+	Found 3-bit shift register for signal <filter/D3_1_4>.
+	Found 3-bit shift register for signal <filter/D3_1_3>.
+	Found 3-bit shift register for signal <filter/D3_1_2>.
+	Found 3-bit shift register for signal <filter/D3_1_1>.
+	Found 3-bit shift register for signal <filter/D3_1_0>.
+Unit <TwoDFilter_sobel> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 413
+ Flip-Flops                                            : 413
+# Shift Registers                                      : 24
+ 3-bit shift register                                  : 24
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : TwoDFilter_sobel.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 5804
+#      GND                         : 25
+#      INV                         : 39
+#      LUT1                        : 100
+#      LUT2                        : 890
+#      LUT3                        : 148
+#      LUT4                        : 591
+#      LUT5                        : 20
+#      LUT6                        : 51
+#      MULT_AND                    : 596
+#      MUXCY                       : 1652
+#      VCC                         : 23
+#      XORCY                       : 1669
+# FlipFlops/Latches                : 1723
+#      FD                          : 11
+#      FDC                         : 28
+#      FDCE                        : 110
+#      FDE                         : 1536
+#      FDP                         : 28
+#      FDPE                        : 2
+#      FDSE                        : 8
+# RAMS                             : 2
+#      RAMB18E1                    : 2
+# Shift Registers                  : 84
+#      SRLC16E                     : 84
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 18
+#      IBUF                        : 9
+#      OBUF                        : 9
+
+Device utilization summary:
+---------------------------
+
+Selected Device : xa7a100tcsg324-2i 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1723  out of  126800     1%  
+ Number of Slice LUTs:                 1923  out of  63400     3%  
+    Number used as Logic:              1839  out of  63400     2%  
+    Number used as Memory:               84  out of  19000     0%  
+       Number used as SRL:               84
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   3214
+   Number with an unused Flip Flop:    1491  out of   3214    46%  
+   Number with an unused LUT:          1291  out of   3214    40%  
+   Number of fully used LUT-FF pairs:   432  out of   3214    13%  
+   Number of unique control sets:        27
+
+IO Utilization: 
+ Number of IOs:                          20
+ Number of bonded IOBs:                  19  out of    210     9%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                1  out of    135     0%  
+    Number using Block RAM only:          1
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK                                | BUFGP                  | 1809  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 25.070ns (Maximum Frequency: 39.888MHz)
+   Minimum input arrival time before clock: 0.706ns
+   Maximum output required time after clock: 0.705ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 25.070ns (frequency: 39.888MHz)
+  Total number of paths / destination ports: 1588776102851399600000 / 3759
+-------------------------------------------------------------------------
+Delay:               25.070ns (Levels of Logic = 275)
+  Source:            sec_inst (FF)
+  Destination:       filter/result_long_0 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: sec_inst to filter/result_long_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     SEC:C->out            1   0.361   0.439  sec_inst (sec_net)
+     end scope: 'filter/squarer1/blk00000001:P<0>'
+     end scope: 'filter/squarer1:p<0>'
+     LUT2:I0->O            1   0.097   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_lut<0> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<0> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<1> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<2> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<3> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<4> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<5> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<6> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<7> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<8> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<9> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<10> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<11> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<12> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<13> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<14> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<15> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<16> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<17> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<18> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<19> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<20> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<21> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<22> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<23> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<24> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<25> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<26> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<26>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<27> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<27>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<28> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<28>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<29> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<29>)
+     MUXCY:CI->O           0   0.023   0.000  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<30> (filter/Madd_G_1[31]_G_2[31]_add_16_OUT_cy<30>)
+     XORCY:CI->O          35   0.370   0.873  filter/Madd_G_1[31]_G_2[31]_add_16_OUT_xor<31> (filter/G_1[31]_G_2[31]_add_16_OUT<31>)
+     LUT6:I1->O            1   0.097   0.000  filter/Maddsub_n0216_lut<0> (filter/Maddsub_n0216_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  filter/Maddsub_n0216_cy<0> (filter/Maddsub_n0216_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0216_cy<1> (filter/Maddsub_n0216_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0216_cy<2> (filter/Maddsub_n0216_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0216_cy<3> (filter/Maddsub_n0216_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0216_cy<4> (filter/Maddsub_n0216_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0216_cy<5> (filter/Maddsub_n0216_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0216_cy<6> (filter/Maddsub_n0216_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0216_cy<7> (filter/Maddsub_n0216_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0216_cy<8> (filter/Maddsub_n0216_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0216_cy<9> (filter/Maddsub_n0216_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0216_cy<10> (filter/Maddsub_n0216_cy<10>)
+     MUXCY:CI->O           0   0.023   0.000  filter/Maddsub_n0216_cy<11> (filter/Maddsub_n0216_cy<11>)
+     XORCY:CI->O          24   0.370   0.463  filter/Maddsub_n0216_xor<12> (filter/n0216<12>)
+     INV:I->O              2   0.113   0.344  filter/n0216<12>_inv2_INV_0 (filter/n0216<12>_inv)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0219_cy<0> (filter/Maddsub_n0219_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0219_cy<1> (filter/Maddsub_n0219_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0219_cy<2> (filter/Maddsub_n0219_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0219_cy<3> (filter/Maddsub_n0219_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0219_cy<4> (filter/Maddsub_n0219_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0219_cy<5> (filter/Maddsub_n0219_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0219_cy<6> (filter/Maddsub_n0219_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0219_cy<7> (filter/Maddsub_n0219_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0219_cy<8> (filter/Maddsub_n0219_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0219_cy<9> (filter/Maddsub_n0219_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0219_cy<10> (filter/Maddsub_n0219_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0219_cy<11> (filter/Maddsub_n0219_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0219_cy<12> (filter/Maddsub_n0219_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0219_cy<13> (filter/Maddsub_n0219_cy<13>)
+     MUXCY:CI->O           0   0.023   0.000  filter/Maddsub_n0219_cy<14> (filter/Maddsub_n0219_cy<14>)
+     XORCY:CI->O          26   0.370   0.468  filter/Maddsub_n0219_xor<15> (filter/n0219<15>)
+     INV:I->O              2   0.113   0.344  filter/n0219<15>_inv2_INV_0 (filter/n0219<15>_inv)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0222_cy<0> (filter/Maddsub_n0222_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0222_cy<1> (filter/Maddsub_n0222_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0222_cy<2> (filter/Maddsub_n0222_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0222_cy<3> (filter/Maddsub_n0222_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0222_cy<4> (filter/Maddsub_n0222_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0222_cy<5> (filter/Maddsub_n0222_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0222_cy<6> (filter/Maddsub_n0222_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0222_cy<7> (filter/Maddsub_n0222_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0222_cy<8> (filter/Maddsub_n0222_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0222_cy<9> (filter/Maddsub_n0222_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0222_cy<10> (filter/Maddsub_n0222_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0222_cy<11> (filter/Maddsub_n0222_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0222_cy<12> (filter/Maddsub_n0222_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0222_cy<13> (filter/Maddsub_n0222_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0222_cy<14> (filter/Maddsub_n0222_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0222_cy<15> (filter/Maddsub_n0222_cy<15>)
+     MUXCY:CI->O           0   0.023   0.000  filter/Maddsub_n0222_cy<16> (filter/Maddsub_n0222_cy<16>)
+     XORCY:CI->O          26   0.370   0.468  filter/Maddsub_n0222_xor<17> (filter/n0222<17>)
+     INV:I->O              2   0.113   0.344  filter/n0222<17>_inv2_INV_0 (filter/n0222<17>_inv)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0225_cy<0> (filter/Maddsub_n0225_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0225_cy<1> (filter/Maddsub_n0225_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0225_cy<2> (filter/Maddsub_n0225_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0225_cy<3> (filter/Maddsub_n0225_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0225_cy<4> (filter/Maddsub_n0225_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0225_cy<5> (filter/Maddsub_n0225_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0225_cy<6> (filter/Maddsub_n0225_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0225_cy<7> (filter/Maddsub_n0225_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0225_cy<8> (filter/Maddsub_n0225_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0225_cy<9> (filter/Maddsub_n0225_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0225_cy<10> (filter/Maddsub_n0225_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0225_cy<11> (filter/Maddsub_n0225_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0225_cy<12> (filter/Maddsub_n0225_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0225_cy<13> (filter/Maddsub_n0225_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0225_cy<14> (filter/Maddsub_n0225_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0225_cy<15> (filter/Maddsub_n0225_cy<15>)
+     MUXCY:CI->O           0   0.023   0.000  filter/Maddsub_n0225_cy<16> (filter/Maddsub_n0225_cy<16>)
+     XORCY:CI->O          25   0.370   0.467  filter/Maddsub_n0225_xor<17> (filter/n0225<17>)
+     INV:I->O              2   0.113   0.344  filter/n0225<17>_inv2_INV_0 (filter/n0225<17>_inv)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0228_cy<0> (filter/Maddsub_n0228_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0228_cy<1> (filter/Maddsub_n0228_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0228_cy<2> (filter/Maddsub_n0228_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0228_cy<3> (filter/Maddsub_n0228_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0228_cy<4> (filter/Maddsub_n0228_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0228_cy<5> (filter/Maddsub_n0228_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0228_cy<6> (filter/Maddsub_n0228_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0228_cy<7> (filter/Maddsub_n0228_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0228_cy<8> (filter/Maddsub_n0228_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0228_cy<9> (filter/Maddsub_n0228_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0228_cy<10> (filter/Maddsub_n0228_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0228_cy<11> (filter/Maddsub_n0228_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0228_cy<12> (filter/Maddsub_n0228_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0228_cy<13> (filter/Maddsub_n0228_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0228_cy<14> (filter/Maddsub_n0228_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0228_cy<15> (filter/Maddsub_n0228_cy<15>)
+     MUXCY:CI->O           0   0.023   0.000  filter/Maddsub_n0228_cy<16> (filter/Maddsub_n0228_cy<16>)
+     XORCY:CI->O          24   0.370   0.463  filter/Maddsub_n0228_xor<17> (filter/n0228<17>)
+     INV:I->O              2   0.113   0.344  filter/n0228<17>_inv2_INV_0 (filter/n0228<17>_inv)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0231_cy<0> (filter/Maddsub_n0231_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0231_cy<1> (filter/Maddsub_n0231_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0231_cy<2> (filter/Maddsub_n0231_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0231_cy<3> (filter/Maddsub_n0231_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0231_cy<4> (filter/Maddsub_n0231_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0231_cy<5> (filter/Maddsub_n0231_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0231_cy<6> (filter/Maddsub_n0231_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0231_cy<7> (filter/Maddsub_n0231_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0231_cy<8> (filter/Maddsub_n0231_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0231_cy<9> (filter/Maddsub_n0231_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0231_cy<10> (filter/Maddsub_n0231_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0231_cy<11> (filter/Maddsub_n0231_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0231_cy<12> (filter/Maddsub_n0231_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0231_cy<13> (filter/Maddsub_n0231_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0231_cy<14> (filter/Maddsub_n0231_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0231_cy<15> (filter/Maddsub_n0231_cy<15>)
+     MUXCY:CI->O           0   0.023   0.000  filter/Maddsub_n0231_cy<16> (filter/Maddsub_n0231_cy<16>)
+     XORCY:CI->O          23   0.370   0.458  filter/Maddsub_n0231_xor<17> (filter/n0231<17>)
+     INV:I->O              2   0.113   0.344  filter/n0231<17>_inv2_INV_0 (filter/n0231<17>_inv)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0234_cy<0> (filter/Maddsub_n0234_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0234_cy<1> (filter/Maddsub_n0234_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0234_cy<2> (filter/Maddsub_n0234_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0234_cy<3> (filter/Maddsub_n0234_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0234_cy<4> (filter/Maddsub_n0234_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0234_cy<5> (filter/Maddsub_n0234_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0234_cy<6> (filter/Maddsub_n0234_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0234_cy<7> (filter/Maddsub_n0234_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0234_cy<8> (filter/Maddsub_n0234_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0234_cy<9> (filter/Maddsub_n0234_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0234_cy<10> (filter/Maddsub_n0234_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0234_cy<11> (filter/Maddsub_n0234_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0234_cy<12> (filter/Maddsub_n0234_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0234_cy<13> (filter/Maddsub_n0234_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0234_cy<14> (filter/Maddsub_n0234_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0234_cy<15> (filter/Maddsub_n0234_cy<15>)
+     MUXCY:CI->O           0   0.023   0.000  filter/Maddsub_n0234_cy<16> (filter/Maddsub_n0234_cy<16>)
+     XORCY:CI->O          22   0.370   0.455  filter/Maddsub_n0234_xor<17> (filter/n0234<17>)
+     INV:I->O              2   0.113   0.344  filter/n0234<17>_inv2_INV_0 (filter/n0234<17>_inv)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0237_cy<0> (filter/Maddsub_n0237_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0237_cy<1> (filter/Maddsub_n0237_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0237_cy<2> (filter/Maddsub_n0237_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0237_cy<3> (filter/Maddsub_n0237_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0237_cy<4> (filter/Maddsub_n0237_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0237_cy<5> (filter/Maddsub_n0237_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0237_cy<6> (filter/Maddsub_n0237_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0237_cy<7> (filter/Maddsub_n0237_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0237_cy<8> (filter/Maddsub_n0237_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0237_cy<9> (filter/Maddsub_n0237_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0237_cy<10> (filter/Maddsub_n0237_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0237_cy<11> (filter/Maddsub_n0237_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0237_cy<12> (filter/Maddsub_n0237_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0237_cy<13> (filter/Maddsub_n0237_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0237_cy<14> (filter/Maddsub_n0237_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0237_cy<15> (filter/Maddsub_n0237_cy<15>)
+     MUXCY:CI->O           0   0.023   0.000  filter/Maddsub_n0237_cy<16> (filter/Maddsub_n0237_cy<16>)
+     XORCY:CI->O          21   0.370   0.450  filter/Maddsub_n0237_xor<17> (filter/n0237<17>)
+     INV:I->O              2   0.113   0.344  filter/n0237<17>_inv2_INV_0 (filter/n0237<17>_inv)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0240_cy<0> (filter/Maddsub_n0240_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0240_cy<1> (filter/Maddsub_n0240_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0240_cy<2> (filter/Maddsub_n0240_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0240_cy<3> (filter/Maddsub_n0240_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0240_cy<4> (filter/Maddsub_n0240_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0240_cy<5> (filter/Maddsub_n0240_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0240_cy<6> (filter/Maddsub_n0240_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0240_cy<7> (filter/Maddsub_n0240_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0240_cy<8> (filter/Maddsub_n0240_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0240_cy<9> (filter/Maddsub_n0240_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0240_cy<10> (filter/Maddsub_n0240_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0240_cy<11> (filter/Maddsub_n0240_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0240_cy<12> (filter/Maddsub_n0240_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0240_cy<13> (filter/Maddsub_n0240_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0240_cy<14> (filter/Maddsub_n0240_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0240_cy<15> (filter/Maddsub_n0240_cy<15>)
+     MUXCY:CI->O           0   0.023   0.000  filter/Maddsub_n0240_cy<16> (filter/Maddsub_n0240_cy<16>)
+     XORCY:CI->O          20   0.370   0.445  filter/Maddsub_n0240_xor<17> (filter/n0240<17>)
+     INV:I->O              2   0.113   0.344  filter/n0240<17>_inv2_INV_0 (filter/n0240<17>_inv)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0243_cy<0> (filter/Maddsub_n0243_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0243_cy<1> (filter/Maddsub_n0243_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0243_cy<2> (filter/Maddsub_n0243_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0243_cy<3> (filter/Maddsub_n0243_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0243_cy<4> (filter/Maddsub_n0243_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0243_cy<5> (filter/Maddsub_n0243_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0243_cy<6> (filter/Maddsub_n0243_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0243_cy<7> (filter/Maddsub_n0243_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0243_cy<8> (filter/Maddsub_n0243_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0243_cy<9> (filter/Maddsub_n0243_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0243_cy<10> (filter/Maddsub_n0243_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0243_cy<11> (filter/Maddsub_n0243_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0243_cy<12> (filter/Maddsub_n0243_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0243_cy<13> (filter/Maddsub_n0243_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0243_cy<14> (filter/Maddsub_n0243_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0243_cy<15> (filter/Maddsub_n0243_cy<15>)
+     MUXCY:CI->O           0   0.023   0.000  filter/Maddsub_n0243_cy<16> (filter/Maddsub_n0243_cy<16>)
+     XORCY:CI->O          19   0.370   0.440  filter/Maddsub_n0243_xor<17> (filter/n0243<17>)
+     INV:I->O              2   0.113   0.344  filter/n0243<17>_inv2_INV_0 (filter/n0243<17>_inv)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0246_cy<0> (filter/Maddsub_n0246_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0246_cy<1> (filter/Maddsub_n0246_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0246_cy<2> (filter/Maddsub_n0246_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0246_cy<3> (filter/Maddsub_n0246_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0246_cy<4> (filter/Maddsub_n0246_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0246_cy<5> (filter/Maddsub_n0246_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0246_cy<6> (filter/Maddsub_n0246_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0246_cy<7> (filter/Maddsub_n0246_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0246_cy<8> (filter/Maddsub_n0246_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0246_cy<9> (filter/Maddsub_n0246_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0246_cy<10> (filter/Maddsub_n0246_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0246_cy<11> (filter/Maddsub_n0246_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0246_cy<12> (filter/Maddsub_n0246_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0246_cy<13> (filter/Maddsub_n0246_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0246_cy<14> (filter/Maddsub_n0246_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0246_cy<15> (filter/Maddsub_n0246_cy<15>)
+     MUXCY:CI->O           0   0.023   0.000  filter/Maddsub_n0246_cy<16> (filter/Maddsub_n0246_cy<16>)
+     XORCY:CI->O          18   0.370   0.434  filter/Maddsub_n0246_xor<17> (filter/n0246<17>)
+     INV:I->O              2   0.113   0.344  filter/n0246<17>_inv2_INV_0 (filter/n0246<17>_inv)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0249_cy<0> (filter/Maddsub_n0249_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0249_cy<1> (filter/Maddsub_n0249_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0249_cy<2> (filter/Maddsub_n0249_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0249_cy<3> (filter/Maddsub_n0249_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0249_cy<4> (filter/Maddsub_n0249_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0249_cy<5> (filter/Maddsub_n0249_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0249_cy<6> (filter/Maddsub_n0249_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0249_cy<7> (filter/Maddsub_n0249_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0249_cy<8> (filter/Maddsub_n0249_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0249_cy<9> (filter/Maddsub_n0249_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0249_cy<10> (filter/Maddsub_n0249_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0249_cy<11> (filter/Maddsub_n0249_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0249_cy<12> (filter/Maddsub_n0249_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0249_cy<13> (filter/Maddsub_n0249_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0249_cy<14> (filter/Maddsub_n0249_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0249_cy<15> (filter/Maddsub_n0249_cy<15>)
+     MUXCY:CI->O           0   0.023   0.000  filter/Maddsub_n0249_cy<16> (filter/Maddsub_n0249_cy<16>)
+     XORCY:CI->O          17   0.370   0.429  filter/Maddsub_n0249_xor<17> (filter/n0249<17>)
+     INV:I->O              2   0.113   0.344  filter/n0249<17>_inv2_INV_0 (filter/n0249<17>_inv)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0252_cy<0> (filter/Maddsub_n0252_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0252_cy<1> (filter/Maddsub_n0252_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0252_cy<2> (filter/Maddsub_n0252_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0252_cy<3> (filter/Maddsub_n0252_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0252_cy<4> (filter/Maddsub_n0252_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0252_cy<5> (filter/Maddsub_n0252_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0252_cy<6> (filter/Maddsub_n0252_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0252_cy<7> (filter/Maddsub_n0252_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0252_cy<8> (filter/Maddsub_n0252_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0252_cy<9> (filter/Maddsub_n0252_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0252_cy<10> (filter/Maddsub_n0252_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0252_cy<11> (filter/Maddsub_n0252_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0252_cy<12> (filter/Maddsub_n0252_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0252_cy<13> (filter/Maddsub_n0252_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0252_cy<14> (filter/Maddsub_n0252_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  filter/Maddsub_n0252_cy<15> (filter/Maddsub_n0252_cy<15>)
+     MUXCY:CI->O           0   0.023   0.000  filter/Maddsub_n0252_cy<16> (filter/Maddsub_n0252_cy<16>)
+     XORCY:CI->O           1   0.370   0.339  filter/Maddsub_n0252_xor<17> (filter/n0252<17>)
+     INV:I->O              1   0.113   0.339  filter/GND_17_o_INV_37_o1_INV_0 (filter/GND_17_o_INV_37_o)
+     FDE:D                     0.008          filter/result_long_0
+    ----------------------------------------
+    Total                     25.070ns (13.507ns logic, 11.563ns route)
+                                       (53.9% logic, 46.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+  Total number of paths / destination ports: 12 / 12
+-------------------------------------------------------------------------
+Offset:              0.706ns (Levels of Logic = 1)
+  Source:            RESET (PAD)
+  Destination:       STATE_FSM_FFd1 (FF)
+  Destination Clock: CLK rising
+
+  Data Path: RESET to STATE_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   0.001   0.356  RESET_IBUF (RESET_IBUF)
+     FDC:CLR                   0.349          STATE_FSM_FFd1
+    ----------------------------------------
+    Total                      0.706ns (0.350ns logic, 0.356ns route)
+                                       (49.6% logic, 50.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+  Total number of paths / destination ports: 9 / 9
+-------------------------------------------------------------------------
+Offset:              0.705ns (Levels of Logic = 1)
+  Source:            RESULT_AVAILABLE (FF)
+  Destination:       RESULT_AVAILABLE (PAD)
+  Source Clock:      CLK rising
+
+  Data Path: RESULT_AVAILABLE to RESULT_AVAILABLE
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.361   0.344  RESULT_AVAILABLE (RESULT_AVAILABLE_OBUF)
+     OBUF:I->O                 0.000          RESULT_AVAILABLE_OBUF (RESULT_AVAILABLE)
+    ----------------------------------------
+    Total                      0.705ns (0.361ns logic, 0.344ns route)
+                                       (51.2% logic, 48.8% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |   25.070|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 82.00 secs
+Total CPU time to Xst completion: 81.66 secs
+ 
+--> 
+
+Total memory usage is 791796 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   32 (   0 filtered)
+Number of infos    :   19 (   0 filtered)
+

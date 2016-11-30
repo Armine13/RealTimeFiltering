@@ -38,6 +38,7 @@ Port ( P0 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
            P7 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
            P8 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
            Filter_out : out  STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
+			  RESET : in  STD_LOGIC :='0';
 			  Enable : in STD_LOGIC := '0';
            CLK : in  STD_LOGIC :='0';
            Result_Available : out  STD_LOGIC:='0');
@@ -86,7 +87,7 @@ end div_by_9;
  signal Sum8 :std_logic_vector (11 downto 0):= (others => '0');
 
  signal div_res : std_logic_vector (11 downto 0):= (others => '0');
- signal cntr : integer := 0;
+ signal cntr : integer range 0 to 10 := 0;
 
 begin
 
@@ -121,6 +122,7 @@ begin
 			
 			if cntr = 4 then
 				Result_Available <= '1';
+				cntr <= 0;
 			else
 				cntr <= cntr + 1;
 			end if;

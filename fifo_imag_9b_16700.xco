@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Thu Oct 08 17:25:21 2015
+# Date: Wed Nov 30 14:58:36 2016
 #
 ##############################################################
 #
@@ -22,8 +22,8 @@ SET asysymbol = true
 SET busformat = BusFormatAngleBracketNotRipped
 SET createndf = false
 SET designentry = VHDL
-SET device = xc7a100t
-SET devicefamily = artix7
+SET device = xa7a100t
+SET devicefamily = aartix7
 SET flowvendor = Other
 SET formalverification = false
 SET foundationsym = false
@@ -31,7 +31,7 @@ SET implementationfiletype = Ngc
 SET package = csg324
 SET removerpms = false
 SET simulationfiles = Behavioral
-SET speedgrade = -1
+SET speedgrade = -2i
 SET verilogsim = false
 SET vhdlsim = true
 # END Project Options
@@ -210,4 +210,4 @@ CSET wuser_width=1
 MISC pkg_timestamp=2012-11-19T12:39:56Z
 # END Extra information
 GENERATE
-# CRC: a6cc836d
+# CRC:  926ed9a

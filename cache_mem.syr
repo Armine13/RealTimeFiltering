@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.23 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.24 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Reading design: cache_mem.prj
 
@@ -120,12 +120,12 @@ Parsing architecture <Behavioral> of entity <cache_mem>.
 =========================================================================
 
 Elaborating entity <cache_mem> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:871 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 69: Using initial value '1' for wr_en1 since it is never assigned
-WARNING:HDLCompiler:871 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 70: Using initial value "0001111010" for prog_full_thresh since it is never assigned
-WARNING:HDLCompiler:871 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 79: Using initial value '1' for wr_en2 since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 70: Using initial value '1' for wr_en1 since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 71: Using initial value "0001111010" for prog_full_thresh since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 80: Using initial value '1' for wr_en2 since it is never assigned
 
 Elaborating entity <fifo_8x1024> (architecture <fifo_8x1024_a>) from library <work>.
-WARNING:HDLCompiler:634 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 85: Net <rst> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 86: Net <rst> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -133,13 +133,13 @@ WARNING:HDLCompiler:634 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cach
 
 Synthesizing Unit <cache_mem>.
     Related source file is "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd".
-INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 103: Output port <data_count> of the instance <fifo1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 103: Output port <empty> of the instance <fifo1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 117: Output port <data_count> of the instance <fifo2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 117: Output port <empty> of the instance <fifo2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 106: Output port <data_count> of the instance <fifo1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 106: Output port <empty> of the instance <fifo1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 120: Output port <data_count> of the instance <fifo2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 120: Output port <empty> of the instance <fifo2> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <rst> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-    Found 1-bit register for signal <PIXEL_READY>.
-    Found 8-bit register for signal <P0>.
+    Found 32-bit register for signal <counter>.
+    Found 8-bit register for signal <p0_temp>.
     Found 8-bit register for signal <P1>.
     Found 8-bit register for signal <P2>.
     Found 8-bit register for signal <din2>.
@@ -150,9 +150,9 @@ WARNING:Xst:653 - Signal <rst> is used but never assigned. This sourceless signa
     Found 8-bit register for signal <P6>.
     Found 8-bit register for signal <P7>.
     Found 8-bit register for signal <P8>.
-    Found 32-bit register for signal <counter>.
-    Found 32-bit adder for signal <counter[31]_GND_3_o_add_0_OUT> created at line 139.
-    Found 32-bit comparator greater for signal <counter[31]_GND_3_o_LessThan_2_o> created at line 140
+    Found 1-bit register for signal <PIXEL_READY>.
+    Found 32-bit adder for signal <counter[31]_GND_3_o_add_1_OUT> created at line 145.
+    Found 32-bit comparator greater for signal <counter[31]_GND_3_o_LessThan_1_o> created at line 142
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred 121 D-type flip-flop(s).
@@ -207,6 +207,29 @@ Macro Statistics
 =========================================================================
 
 Optimizing unit <cache_mem> ...
+WARNING:Xst:1293 - FF/Latch <counter_31> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_30> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_29> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_28> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_27> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_26> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_25> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_24> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_23> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_22> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_21> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_20> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_19> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_18> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_17> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_16> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_15> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_14> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_13> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_12> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_11> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_10> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_9> has a constant value of 0 in block <cache_mem>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -230,8 +253,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 121
- Flip-Flops                                            : 121
+# Registers                                            : 98
+ Flip-Flops                                            : 98
 
 =========================================================================
 
@@ -254,23 +277,23 @@ Top Level Output File Name         : cache_mem.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 456
+# BELS                             : 387
 #      GND                         : 5
-#      INV                         : 9
-#      LUT1                        : 31
+#      INV                         : 8
+#      LUT1                        : 8
 #      LUT2                        : 40
-#      LUT3                        : 36
+#      LUT3                        : 35
 #      LUT4                        : 84
-#      LUT5                        : 14
-#      LUT6                        : 22
-#      MUXCY                       : 140
+#      LUT5                        : 8
+#      LUT6                        : 31
+#      MUXCY                       : 116
 #      VCC                         : 3
-#      XORCY                       : 72
-# FlipFlops/Latches                : 295
-#      FD                          : 8
+#      XORCY                       : 49
+# FlipFlops/Latches                : 272
+#      FD                          : 17
 #      FDC                         : 26
 #      FDCE                        : 110
-#      FDE                         : 121
+#      FDE                         : 89
 #      FDP                         : 28
 #      FDPE                        : 2
 # RAMS                             : 2
@@ -288,19 +311,19 @@ Selected Device : xa7a100tcsg324-2i
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             295  out of  126800     0%  
- Number of Slice LUTs:                  236  out of  63400     0%  
-    Number used as Logic:               236  out of  63400     0%  
+ Number of Slice Registers:             272  out of  126800     0%  
+ Number of Slice LUTs:                  214  out of  63400     0%  
+    Number used as Logic:               214  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    410
-   Number with an unused Flip Flop:     115  out of    410    28%  
-   Number with an unused LUT:           174  out of    410    42%  
-   Number of fully used LUT-FF pairs:   121  out of    410    29%  
-   Number of unique control sets:        21
+ Number of LUT Flip Flop pairs used:    389
+   Number with an unused Flip Flop:     117  out of    389    30%  
+   Number with an unused LUT:           175  out of    389    44%  
+   Number of fully used LUT-FF pairs:    97  out of    389    24%  
+   Number of unique control sets:        22
 
 IO Utilization: 
- Number of IOs:                          83
+ Number of IOs:                          84
  Number of bonded IOBs:                  83  out of    210    39%  
 
 Specific Feature Utilization:
@@ -329,7 +352,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-CLK                                | BUFGP                  | 297   |
+CLK                                | BUFGP                  | 274   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -340,8 +363,8 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 2.727ns (Maximum Frequency: 366.764MHz)
-   Minimum input arrival time before clock: 1.250ns
+   Minimum period: 2.569ns (Maximum Frequency: 389.196MHz)
+   Minimum input arrival time before clock: 1.294ns
    Maximum output required time after clock: 0.705ns
    Maximum combinational path delay: No path found
 
@@ -351,39 +374,33 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK'
-  Clock period: 2.727ns (frequency: 366.764MHz)
-  Total number of paths / destination ports: 2955 / 732
+  Clock period: 2.569ns (frequency: 389.196MHz)
+  Total number of paths / destination ports: 2410 / 677
 -------------------------------------------------------------------------
-Delay:               2.727ns (Levels of Logic = 9)
-  Source:            counter_1 (FF)
-  Destination:       PIXEL_READY (FF)
+Delay:               2.569ns (Levels of Logic = 3)
+  Source:            fifo2/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.gpf.wrpf/prog_full_i (FF)
+  Destination:       fifo2/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.gpf.wrpf/prog_full_i (FF)
   Source Clock:      CLK rising
   Destination Clock: CLK rising
 
-  Data Path: counter_1 to PIXEL_READY
+  Data Path: fifo2/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.gpf.wrpf/prog_full_i to fifo2/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.gpf.wrpf/prog_full_i
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              2   0.361   0.748  counter_1 (counter_1)
-     LUT5:I0->O            1   0.097   0.000  Mcompar_counter[31]_GND_3_o_LessThan_2_o_lut<0> (Mcompar_counter[31]_GND_3_o_LessThan_2_o_lut<0>)
-     MUXCY:S->O            1   0.353   0.000  Mcompar_counter[31]_GND_3_o_LessThan_2_o_cy<0> (Mcompar_counter[31]_GND_3_o_LessThan_2_o_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_counter[31]_GND_3_o_LessThan_2_o_cy<1> (Mcompar_counter[31]_GND_3_o_LessThan_2_o_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_counter[31]_GND_3_o_LessThan_2_o_cy<2> (Mcompar_counter[31]_GND_3_o_LessThan_2_o_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_counter[31]_GND_3_o_LessThan_2_o_cy<3> (Mcompar_counter[31]_GND_3_o_LessThan_2_o_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_counter[31]_GND_3_o_LessThan_2_o_cy<4> (Mcompar_counter[31]_GND_3_o_LessThan_2_o_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar_counter[31]_GND_3_o_LessThan_2_o_cy<5> (Mcompar_counter[31]_GND_3_o_LessThan_2_o_cy<5>)
-     MUXCY:CI->O           1   0.253   0.339  Mcompar_counter[31]_GND_3_o_LessThan_2_o_cy<6> (Mcompar_counter[31]_GND_3_o_LessThan_2_o_cy<6>)
-     INV:I->O              1   0.113   0.339  Mcompar_counter[31]_GND_3_o_LessThan_2_o_cy<6>_inv1_INV_0 (counter[31]_GND_3_o_LessThan_2_o)
-     FDE:D                     0.008          PIXEL_READY
+     FDP:C->Q             17   0.361   0.661  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.gpf.wrpf/prog_full_i (prog_full)
+     LUT3:I0->O            1   0.097   0.753  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.gpf.wrpf/Mmux_prog_full_i_GND_205_o_MUX_26_o15_SW0_SW1 (N3)
+     LUT6:I0->O            1   0.097   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.gpf.wrpf/prog_full_i_rstpot_lut1 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.gpf.wrpf/prog_full_i_rstpot_lut1)
+     MUXCY:S->O            1   0.592   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.gpf.wrpf/prog_full_i_rstpot_cy1 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.gpf.wrpf/prog_full_i_rstpot)
+     FDP:D                     0.008          U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.gpf.wrpf/prog_full_i
     ----------------------------------------
-    Total                      2.727ns (1.300ns logic, 1.427ns route)
-                                       (47.7% logic, 52.3% route)
+    Total                      2.569ns (1.155ns logic, 1.414ns route)
+                                       (45.0% logic, 55.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
-  Total number of paths / destination ports: 129 / 129
+  Total number of paths / destination ports: 106 / 106
 -------------------------------------------------------------------------
-Offset:              1.250ns (Levels of Logic = 2)
+Offset:              1.294ns (Levels of Logic = 2)
   Source:            START_MEM (PAD)
   Destination:       p8_temp_0 (FF)
   Destination Clock: CLK rising
@@ -392,12 +409,12 @@ Offset:              1.250ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   0.001   0.571  START_MEM_IBUF (START_MEM_IBUF)
-     LUT3:I0->O          121   0.097   0.485  _n0109_inv21 (_n0109_inv2)
+     IBUF:I->O            10   0.001   0.621  START_MEM_IBUF (START_MEM_IBUF)
+     LUT3:I0->O           89   0.097   0.479  _n0114_inv11 (_n0114_inv1)
      FDE:CE                    0.095          p8_temp_0
     ----------------------------------------
-    Total                      1.250ns (0.193ns logic, 1.057ns route)
-                                       (15.4% logic, 84.6% route)
+    Total                      1.294ns (0.193ns logic, 1.101ns route)
+                                       (14.9% logic, 85.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
@@ -428,20 +445,20 @@ Clock to Setup on destination clock CLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |    2.727|         |         |         |
+CLK            |    2.569|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 69.00 secs
-Total CPU time to Xst completion: 68.67 secs
+Total REAL time to Xst completion: 62.00 secs
+Total CPU time to Xst completion: 61.48 secs
  
 --> 
 
-Total memory usage is 786100 kilobytes
+Total memory usage is 785716 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    6 (   0 filtered)
+Number of warnings :   29 (   0 filtered)
 Number of infos    :   16 (   0 filtered)
 

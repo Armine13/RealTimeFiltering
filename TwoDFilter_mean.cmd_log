@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/TwoDFilter_mean.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/TwoDFilter_mean.syr" 

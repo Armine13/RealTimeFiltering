@@ -40,6 +40,7 @@ Port ( P0 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
            P7 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
            P8 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
            Filter_out : out  STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
+			  RESET : in  STD_LOGIC :='0';
 			  Enable : in STD_LOGIC := '0';
            CLK : in  STD_LOGIC :='0';
            Result_Available : out  STD_LOGIC:='0');
@@ -105,7 +106,7 @@ Port ( P0 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
  signal Sum6 :std_logic_vector (13 downto 0):= (others => '0');
  signal Sum7 :std_logic_vector (14 downto 0):= (others => '0');
  signal Sum8 :std_logic_vector (15 downto 0):= (others => '0');
- signal cntr : integer := 0;
+ signal cntr : integer range 0 to 10 := 0;
 begin
 
 
@@ -178,6 +179,7 @@ begin
 			
 			if cntr = 5 then
 				Result_Available <= '1';
+				
 			end if;
 
 		end if;
@@ -189,8 +191,11 @@ begin
 		if (Enable = '1') then  
 		
 			if (CLK'event and CLK = '1') then
-			
-				cntr <= cntr + 1;
+				if cntr = 5 then
+					cntr <= 0;
+				else
+					cntr <= cntr + 1;
+				end if;
 			end if;
 		end if;
 	

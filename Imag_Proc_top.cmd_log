@@ -1,0 +1,53 @@
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Imag_proc.ucf -p xa7a100t-csg324-2I Imag_Proc_top.ngc Imag_Proc_top.ngd  
+map -intstyle ise -p xa7a100t-csg324-2I -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o Imag_Proc_top_map.ncd Imag_Proc_top.ngd Imag_Proc_top.pcf 
+par -w -intstyle ise -ol high -mt off Imag_Proc_top_map.ncd Imag_Proc_top.ncd Imag_Proc_top.pcf 
+trce -intstyle ise -v 3 -s 2I -n 3 -fastpaths -xml Imag_Proc_top.twx Imag_Proc_top.ncd -o Imag_Proc_top.twr Imag_Proc_top.pcf -ucf Imag_proc.ucf 
+bitgen -intstyle ise -f Imag_Proc_top.ut Imag_Proc_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Imag_proc.ucf -p xa7a100t-csg324-2I Imag_Proc_top.ngc Imag_Proc_top.ngd  
+map -intstyle ise -p xa7a100t-csg324-2I -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o Imag_Proc_top_map.ncd Imag_Proc_top.ngd Imag_Proc_top.pcf 
+par -w -intstyle ise -ol high -mt off Imag_Proc_top_map.ncd Imag_Proc_top.ncd Imag_Proc_top.pcf 
+trce -intstyle ise -v 3 -s 2I -n 3 -fastpaths -xml Imag_Proc_top.twx Imag_Proc_top.ncd -o Imag_Proc_top.twr Imag_Proc_top.pcf -ucf Imag_proc.ucf 
+bitgen -intstyle ise -f Imag_Proc_top.ut Imag_Proc_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Imag_proc.ucf -p xa7a100t-csg324-2I Imag_Proc_top.ngc Imag_Proc_top.ngd  
+map -intstyle ise -p xa7a100t-csg324-2I -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o Imag_Proc_top_map.ncd Imag_Proc_top.ngd Imag_Proc_top.pcf 
+par -w -intstyle ise -ol high -mt off Imag_Proc_top_map.ncd Imag_Proc_top.ncd Imag_Proc_top.pcf 
+trce -intstyle ise -v 3 -s 2I -n 3 -fastpaths -xml Imag_Proc_top.twx Imag_Proc_top.ncd -o Imag_Proc_top.twr Imag_Proc_top.pcf -ucf Imag_proc.ucf 
+bitgen -intstyle ise -f Imag_Proc_top.ut Imag_Proc_top.ncd 
+bitgen -intstyle ise -f Imag_Proc_top.ut Imag_Proc_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Imag_proc.ucf -p xa7a100t-csg324-2I Imag_Proc_top.ngc Imag_Proc_top.ngd  
+map -intstyle ise -p xa7a100t-csg324-2I -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o Imag_Proc_top_map.ncd Imag_Proc_top.ngd Imag_Proc_top.pcf 
+par -w -intstyle ise -ol high -mt off Imag_Proc_top_map.ncd Imag_Proc_top.ncd Imag_Proc_top.pcf 
+trce -intstyle ise -v 3 -s 2I -n 3 -fastpaths -xml Imag_Proc_top.twx Imag_Proc_top.ncd -o Imag_Proc_top.twr Imag_Proc_top.pcf -ucf Imag_proc.ucf 
+bitgen -intstyle ise -f Imag_Proc_top.ut Imag_Proc_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.xst" -ofn "C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/Imag_Proc_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Imag_proc.ucf -p xa7a100t-csg324-2I Imag_Proc_top.ngc Imag_Proc_top.ngd  
+map -intstyle ise -p xa7a100t-csg324-2I -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o Imag_Proc_top_map.ncd Imag_Proc_top.ngd Imag_Proc_top.pcf 
+par -w -intstyle ise -ol high -mt off Imag_Proc_top_map.ncd Imag_Proc_top.ncd Imag_Proc_top.pcf 
+trce -intstyle ise -v 3 -s 2I -n 3 -fastpaths -xml Imag_Proc_top.twx Imag_Proc_top.ncd -o Imag_Proc_top.twr Imag_Proc_top.pcf -ucf Imag_proc.ucf 
+bitgen -intstyle ise -f Imag_Proc_top.ut Imag_Proc_top.ncd 

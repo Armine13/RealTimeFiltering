@@ -33,6 +33,7 @@ entity cache_mem is
     Port ( CLK : in STD_LOGIC;
 			  DATA : in  STD_LOGIC_VECTOR (7 downto 0);
            START_MEM : in  STD_LOGIC;
+			  RESET : in  STD_LOGIC :='0';
 			  PIXEL_READY : out STD_LOGIC;
 			  EMPTY : out STD_LOGIC;
            P8 : out  STD_LOGIC_VECTOR (7 downto 0);
@@ -98,7 +99,6 @@ signal p7_temp: std_logic_vector (7 downto 0);
 signal p8_temp: std_logic_vector (7 downto 0);
 
 signal counter: integer := 0;
---signal counter2: integer := 0;
 
 begin
 
@@ -131,7 +131,7 @@ fifo2 : fifo_8x1024  PORT MAP (
     prog_full => prog_full2
   );
   
-main: process(CLK, START_MEM)
+main: process(CLK, RESET)
 begin
 	if (CLK'event and CLK = '1') then
 		
@@ -145,8 +145,6 @@ begin
 					counter <= counter + 1;
 					PIXEL_READY <= '0';
 				end if;
-				
-				--counter2 <= counter2 + 1;--16384
 				
 				P0_temp <= P1_temp;
 				P1_temp <= P2_temp;
@@ -175,20 +173,6 @@ P5 <= P5_temp;
 P6 <= P6_temp;
 P7 <= P7_temp;
 P8 <= P8_temp;
-
---empty_flag: process(CLK)
---begin
---
---if empty2 then
---	if (counter2 > 2) then
---		EMPTY <= '1';
---	else
---		EMPTY <= '0';
---		counter2 <= counter2 + 1;
---	end if;
---end if;
---
---end process empty_flag;
 
 end Behavioral;
 

@@ -1,12 +1,12 @@
 iMPACT Version: 14.7
 
-iMPACT log file Started on Fri Nov 25 14:33:57 2016
+iMPACT log file Started on Wed Nov 30 16:01:32 2016
 
 Welcome to iMPACT
 iMPACT Version: 14.7
-Project: 'C:\Users\av721115\Armine\\auto_project.ipf' already exists.
-Original project has been renamed to'C:\Users\av721115\Armine\\auto_project_1.ipf'.
-Project: C:\Users\av721115\Armine\\auto_project.ipf created.
+Project: 'C:\Users\Mins\Documents\Xilinx\demo_BsCV1\\auto_project.ipf' alreadyexists.
+Original project has been renamed to'C:\Users\Mins\Documents\Xilinx\demo_BsCV1\\auto_project_1.ipf'.
+Project: C:\Users\Mins\Documents\Xilinx\demo_BsCV1\\auto_project.ipf created.
 // *** BATCH CMD : setMode -bs
 GUI --- Auto connect to cable...
 // *** BATCH CMD : setCable -port auto
@@ -21,7 +21,7 @@ INFO:iMPACT - Digilent Plugin: Firmware Version: 0108
 INFO:iMPACT - Digilent Plugin: JTAG Port Number: 0
 INFO:iMPACT - Digilent Plugin: JTAG Clock Frequency: 10000000 Hz
 Attempting to identify devices in the boundary-scan chain configuration...
-INFO:iMPACT - Current time: 11/25/2016 2:34:01 PM
+INFO:iMPACT - Current time: 30/11/2016 16:01:35
 // *** BATCH CMD : Identify -inferir 
 PROGRESS_START - Starting Operation.
 Identifying chain contents...'0': : Manufacturer's ID = Xilinx XC7A100T, Version : 1
@@ -34,69 +34,8 @@ done.
 PROGRESS_END - End Operation.
 Elapsed time =      0 sec.
 // *** BATCH CMD : identifyMPM 
-Project: 'C:\Users\av721115\Armine\\auto_project.ipf' created.
-// *** BATCH CMD : setMode -bs
-// *** BATCH CMD : setMode -ss
-// *** BATCH CMD : setMode -sm
-// *** BATCH CMD : setMode -hw140
-// *** BATCH CMD : setMode -spi
-// *** BATCH CMD : setMode -acecf
-// *** BATCH CMD : setMode -acempm
-// *** BATCH CMD : setMode -pff
-// *** BATCH CMD : setMode -bs
-// *** BATCH CMD : saveProjectFile -file"C:\Users\av721115\Armine\\auto_project.ipf"
-// *** BATCH CMD : setMode -bs
-// *** BATCH CMD : deleteDevice -position 1
-// *** BATCH CMD : setMode -bs
-// *** BATCH CMD : setMode -ss
-// *** BATCH CMD : setMode -sm
-// *** BATCH CMD : setMode -hw140
-// *** BATCH CMD : setMode -spi
-// *** BATCH CMD : setMode -acecf
-// *** BATCH CMD : setMode -acempm
-// *** BATCH CMD : setMode -pff
-// *** BATCH CMD : setMode -bs
-// *** BATCH CMD : setMode -ss
-// *** BATCH CMD : setMode -sm
-// *** BATCH CMD : setMode -hw140
-// *** BATCH CMD : setMode -spi
-// *** BATCH CMD : setMode -acecf
-// *** BATCH CMD : setMode -acempm
-// *** BATCH CMD : setMode -pff
-Welcome to iMPACT
-iMPACT Version: 14.7
-Project: 'C:\Users\av721115\Armine\\auto_project.ipf' already exists.
-Original project has been renamed to'C:\Users\av721115\Armine\\auto_project_1.ipf'.
-Project: C:\Users\av721115\Armine\\auto_project.ipf created.
-// *** BATCH CMD : setMode -bs
-GUI --- Auto connect to cable...
-// *** BATCH CMD : setCable -port auto
-INFO:iMPACT - Digilent Plugin: Plugin Version: 2.4.4
-INFO:iMPACT - Digilent Plugin: found 1 device(s).
-INFO:iMPACT - Digilent Plugin: opening device: "Nexys4", SN:210274532528
-INFO:iMPACT - Digilent Plugin: User Name: Nexys4
-INFO:iMPACT - Digilent Plugin: Product Name: Digilent Nexys4
-INFO:iMPACT - Digilent Plugin: Serial Number: 210274532528
-INFO:iMPACT - Digilent Plugin: Product ID: 01200151
-INFO:iMPACT - Digilent Plugin: Firmware Version: 0108
-INFO:iMPACT - Digilent Plugin: JTAG Port Number: 0
-INFO:iMPACT - Digilent Plugin: JTAG Clock Frequency: 10000000 Hz
-Attempting to identify devices in the boundary-scan chain configuration...
-INFO:iMPACT - Current time: 11/25/2016 2:40:51 PM
-// *** BATCH CMD : Identify -inferir 
-PROGRESS_START - Starting Operation.
-Identifying chain contents...'0': : Manufacturer's ID = Xilinx XC7A100T, Version : 1
-INFO:iMPACT:1777 - 
-   Reading C:/Xilinx/14.7/ISE_DS/ISE/artix7/data/xc7a100t.bsd...
-INFO:iMPACT - Using CseAdapterBSDevice
-INFO:iMPACT:501 - '1': Added Device XC7A100T successfully.
-----------------------------------------------------------------------
-done.
-PROGRESS_END - End Operation.
-Elapsed time =      0 sec.
-// *** BATCH CMD : identifyMPM 
-// *** BATCH CMD : assignFile -p 1 -file"C:/Documents/Xilinx/RealTimeFiltering/imag_proc_top.bit"
-'1': Loading file 'C:/Documents/Xilinx/RealTimeFiltering/imag_proc_top.bit' ...
+// *** BATCH CMD : assignFile -p 1 -file"C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/imag_proc_top.bit"
+'1': Loading file'C:/Users/Mins/Documents/Xilinx/RealTimeFiltering/imag_proc_top.bit' ...
 done.
 INFO:iMPACT:1777 - 
    Reading C:/Xilinx/14.7/ISE_DS/ISE/aartix7/data/xa7a100t.bsd...
@@ -107,14 +46,15 @@ UserID read from the bitstream file = 0xFFFFFFFF.
 Data width read from the bitstream file = 1.
 INFO:iMPACT:501 - '1': Added Device xa7a100t successfully.
 ----------------------------------------------------------------------
-INFO:iMPACT - Current time: 11/25/2016 2:41:17 PM
+INFO:iMPACT - Current time: 30/11/2016 16:01:54
 // *** BATCH CMD : Program -p 1 
 Maximum TCK operating frequency for this device chain: 66000000.
 Validating chain...
 Boundary-scan chain validated successfully.
-1: Device Temperature: Current Reading:   38.56 C, Min. Reading:   32.16 C, Max.Reading:   39.05 C
-1: VCCINT Supply: Current Reading:   1.002 V, Min. Reading:   1.002 V, Max.Reading:   1.005 V
-1: VCCAUX Supply: Current Reading:   1.796 V, Min. Reading:   1.793 V, Max.Reading:   1.799 V
+1: Device Temperature: Current Reading:   36.10 C, Min. Reading:   24.78 C, Max.Reading:   36.59 C
+1: VCCINT Supply: Current Reading:   1.005 V, Min. Reading:   1.002 V, Max.Reading:   1.008 V
+1: VCCAUX Supply: Current Reading:   1.799 V, Min. Reading:   1.796 V, Max.Reading:   1.802 V
+PROGRESS_START - Starting Operation.
 INFO:iMPACT - Creating XC7A100T device.
 PROGRESS_START - Starting Operation.
 '1': Programming device...
@@ -132,10 +72,40 @@ Match cycle: NoWait
  LCK_cycle = NoWait.
 LCK cycle: NoWait
 PROGRESS_END - End Operation.
-Elapsed time =      3 sec.
+INFO:iMPACT - '1': Checking done pin....done.
+Elapsed time =      4 sec.
+'1': Programmed successfully.
+INFO:iMPACT - Current time: 30/11/2016 16:20:24
+Updating config fileC:/Users/Mins/Documents/Xilinx/RealTimeFiltering/imag_proc_top.bit...
+INFO:iMPACT:2257 - Startup Clock has been changed to 'JtagClk' in the bitstream   stored in memory,
+   but the original bitstream file remains unchanged.
+// *** BATCH CMD : Program -p 1 
+Maximum TCK operating frequency for this device chain: 66000000.
+Validating chain...
+Boundary-scan chain validated successfully.
+1: Device Temperature: Current Reading:   37.58 C, Min. Reading:   35.61 C, Max.Reading:   38.07 C
+1: VCCINT Supply: Current Reading:   1.002 V, Min. Reading:   0.999 V, Max.Reading:   1.005 V
+1: VCCAUX Supply: Current Reading:   1.796 V, Min. Reading:   1.793 V, Max.Reading:   1.799 V
+PROGRESS_START - Starting Operation.
+'1': Programming device...
+ Match_cycle = NoWait.
+Match cycle: NoWait
+ LCK_cycle = NoWait.
+LCK cycle: NoWait
+done.
+INFO:Cse - Status register values:
+INFO:Cse - 0011 1111 1111 1110 0000 1000 0000 0010 
+INFO:Cse - '1': Completed downloading bit file to device.
+INFO:Cse - '1': Programming completed successfully.
+ Match_cycle = NoWait.
+Match cycle: NoWait
+ LCK_cycle = NoWait.
+LCK cycle: NoWait
 INFO:iMPACT - '1': Checking done pin....done.
 '1': Programmed successfully.
-Project: 'C:\Users\av721115\Armine\\auto_project.ipf' created.
+PROGRESS_END - End Operation.
+Elapsed time =      4 sec.
+Project: 'C:\Users\Mins\Documents\Xilinx\demo_BsCV1\\auto_project.ipf' created.
 // *** BATCH CMD : setMode -bs
 // *** BATCH CMD : setMode -ss
 // *** BATCH CMD : setMode -sm
@@ -145,9 +115,9 @@ Project: 'C:\Users\av721115\Armine\\auto_project.ipf' created.
 // *** BATCH CMD : setMode -acempm
 // *** BATCH CMD : setMode -pff
 // *** BATCH CMD : setMode -bs
-// *** BATCH CMD : saveProjectFile -file"C:\Users\av721115\Armine\\auto_project.ipf"
+// *** BATCH CMD : saveProjectFile -file"C:\Users\Mins\Documents\Xilinx\demo_BsCV1\\auto_project.ipf"
 // *** BATCH CMD : setMode -bs
-INFO:iMPACT - Launching WebTalk, please refer to the webtalk log at   C:\Users\av721115\Armine\webtalk.log for details.
+INFO:iMPACT - Launching WebTalk, please refer to the webtalk log at   C:\Users\Mins\Documents\Xilinx\demo_BsCV1\webtalk.log for details.
 INFO:iMPACT - Running wbtc successfully.
 // *** BATCH CMD : setMode -bs
 // *** BATCH CMD : deleteDevice -position 1

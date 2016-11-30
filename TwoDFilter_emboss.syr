@@ -1,0 +1,301 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
+ 
+--> Reading design: TwoDFilter_emboss.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "TwoDFilter_emboss.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "TwoDFilter_emboss"
+Output Format                      : NGC
+Target Device                      : xa7a100t-2I-csg324
+
+---- Source Options
+Top Module Name                    : TwoDFilter_emboss
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\ipcore_dir\fifo_8x1024.vhd" into library work
+Parsing entity <fifo_8x1024>.
+Parsing architecture <fifo_8x1024_a> of entity <fifo_8x1024>.
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\ipcore_dir\multiplier.vhd" into library work
+Parsing entity <multiplier>.
+Parsing architecture <multiplier_a> of entity <multiplier>.
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter_kernel.vhd" into library work
+Parsing entity <filter_kernel>.
+Parsing architecture <Behavioral> of entity <filter_kernel>.
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\emboss_filter.vhd" into library work
+Parsing entity <emboss_filter>.
+Parsing architecture <Behavioral> of entity <emboss_filter>.
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" into library work
+Parsing entity <cache_mem>.
+Parsing architecture <Behavioral> of entity <cache_mem>.
+Parsing VHDL file "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\TwoDFilter_emboss.vhd" into library work
+Parsing entity <TwoDFilter_emboss>.
+Parsing architecture <Behavioral> of entity <twodfilter_emboss>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <TwoDFilter_emboss> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <cache_mem> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 70: Using initial value '1' for wr_en1 since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 71: Using initial value "0001111010" for prog_full_thresh since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 80: Using initial value '1' for wr_en2 since it is never assigned
+
+Elaborating entity <fifo_8x1024> (architecture <fifo_8x1024_a>) from library <work>.
+WARNING:HDLCompiler:634 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" Line 86: Net <rst> does not have a driver.
+
+Elaborating entity <emboss_filter> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <filter_kernel> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <multiplier> (architecture <multiplier_a>) from library <work>.
+WARNING:HDLCompiler:92 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\emboss_filter.vhd" Line 151: enable should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\TwoDFilter_emboss.vhd" Line 131: reset should be on the sensitivity list of the process
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <TwoDFilter_emboss>.
+    Related source file is "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\TwoDFilter_emboss.vhd".
+INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\TwoDFilter_emboss.vhd" line 98: Output port <EMPTY> of the instance <cache> is unconnected or connected to loadless signal.
+    Found 3-bit register for signal <STATE>.
+    Found 1-bit register for signal <enable_filter>.
+    Found 1-bit register for signal <RESULT_AVAILABLE>.
+    Found 32-bit register for signal <counter>.
+INFO:Xst:1799 - State s4 is never reached in FSM <STATE>.
+INFO:Xst:1799 - State s5 is never reached in FSM <STATE>.
+    Found finite state machine <FSM_0> for signal <STATE>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 4                                              |
+    | Clock              | CLK (rising_edge)                              |
+    | Reset              | RESET (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | s1                                             |
+    | Power Up State     | s1                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit adder for signal <counter[31]_GND_3_o_add_8_OUT> created at line 165.
+    Found 32-bit comparator greater for signal <n0002> created at line 147
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  34 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   1 Finite State Machine(s).
+Unit <TwoDFilter_emboss> synthesized.
+
+Synthesizing Unit <cache_mem>.
+    Related source file is "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd".
+INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 106: Output port <data_count> of the instance <fifo1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 106: Output port <empty> of the instance <fifo1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 120: Output port <data_count> of the instance <fifo2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.vhd" line 120: Output port <empty> of the instance <fifo2> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <EMPTY> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <rst> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 32-bit register for signal <counter>.
+    Found 8-bit register for signal <p0_temp>.
+    Found 8-bit register for signal <p1_temp>.
+    Found 8-bit register for signal <p2_temp>.
+    Found 8-bit register for signal <din2>.
+    Found 8-bit register for signal <p3_temp>.
+    Found 8-bit register for signal <p4_temp>.
+    Found 8-bit register for signal <p5_temp>.
+    Found 8-bit register for signal <din1>.
+    Found 8-bit register for signal <p6_temp>.
+    Found 8-bit register for signal <p7_temp>.
+    Found 8-bit register for signal <p8_temp>.
+    Found 1-bit register for signal <PIXEL_READY>.
+    Found 32-bit adder for signal <counter[31]_GND_4_o_add_1_OUT> created at line 145.
+    Found 32-bit comparator greater for signal <counter[31]_GND_4_o_LessThan_1_o> created at line 142
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred 121 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <cache_mem> synthesized.
+
+Synthesizing Unit <emboss_filter>.
+    Related source file is "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\emboss_filter.vhd".
+    Found 13-bit register for signal <Sum4>.
+    Found 13-bit register for signal <Sum3>.
+    Found 13-bit register for signal <Sum2>.
+    Found 13-bit register for signal <Sum1>.
+    Found 14-bit register for signal <Sum5>.
+    Found 14-bit register for signal <Sum6>.
+    Found 12-bit register for signal <D2>.
+    Found 15-bit register for signal <Sum7>.
+    Found 12-bit register for signal <D3>.
+    Found 16-bit register for signal <Sum8>.
+    Found 8-bit register for signal <Filter_out>.
+    Found 1-bit register for signal <Result_Available>.
+    Found 32-bit register for signal <cntr>.
+    Found 12-bit register for signal <D1>.
+    Found 13-bit adder for signal <M2[11]_M1[11]_add_0_OUT> created at line 156.
+    Found 13-bit adder for signal <M4[11]_M3[11]_add_1_OUT> created at line 157.
+    Found 13-bit adder for signal <M6[11]_M5[11]_add_2_OUT> created at line 158.
+    Found 13-bit adder for signal <M8[11]_M7[11]_add_3_OUT> created at line 159.
+    Found 14-bit adder for signal <Sum1[12]_Sum2[12]_add_4_OUT> created at line 161.
+    Found 14-bit adder for signal <Sum3[12]_Sum4[12]_add_5_OUT> created at line 162.
+    Found 15-bit adder for signal <Sum5[13]_Sum6[13]_add_6_OUT> created at line 165.
+    Found 16-bit adder for signal <Sum7[14]_D3[11]_add_7_OUT> created at line 168.
+    Found 32-bit adder for signal <cntr[31]_GND_17_o_add_36_OUT> created at line 193.
+    Found 16-bit comparator greater for signal <Sum8[15]_GND_17_o_LessThan_9_o> created at line 172
+    Summary:
+	inferred   9 Adder/Subtractor(s).
+	inferred 188 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <emboss_filter> synthesized.
+
+Synthesizing Unit <filter_kernel>.
+    Related source file is "C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\filter_kernel.vhd".
+    Summary:
+	no macro.
+Unit <filter_kernel> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 11
+ 13-bit adder                                          : 4
+ 14-bit adder                                          : 2
+ 15-bit adder                                          : 1
+ 16-bit adder                                          : 1
+ 32-bit adder                                          : 3
+# Registers                                            : 30
+ 1-bit register                                        : 4
+ 12-bit register                                       : 3
+ 13-bit register                                       : 4
+ 14-bit register                                       : 2
+ 15-bit register                                       : 1
+ 16-bit register                                       : 1
+ 32-bit register                                       : 3
+ 8-bit register                                        : 12
+# Comparators                                          : 3
+ 16-bit comparator greater                             : 1
+ 32-bit comparator greater                             : 2
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst - The specified part-type was not generated at build time. XST is loading the full part-type and will therefore consume more CPU and memory.
+Loading device for application Rf_Device from file '7a100t.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
+Reading core <ipcore_dir/fifo_8x1024.ngc>.
+Reading core <ipcore_dir/multiplier.ngc>.
+Reading Secure Unit <blk00000001>.
+Loading core <fifo_8x1024> for timing and area information for instance <fifo1>.
+Loading core <fifo_8x1024> for timing and area information for instance <fifo2>.
+Loading core <multiplier> for timing and area information for instance <mult0>.
+Loading core <multiplier> for timing and area information for instance <mult1>.
+Loading core <multiplier> for timing and area information for instance <mult2>.
+Loading core <multiplier> for timing and area information for instance <mult3>.
+Loading core <multiplier> for timing and area information for instance <mult4>.
+Loading core <multiplier> for timing and area information for instance <mult5>.
+Loading core <multiplier> for timing and area information for instance <mult6>.
+Loading core <multiplier> for timing and area information for instance <mult7>.
+Loading core <multiplier> for timing and area information for instance <mult8>.
+Loading device for application Rf_Device from file '7a100t.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.

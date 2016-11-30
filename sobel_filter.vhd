@@ -40,6 +40,7 @@ Port ( P0 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
            P7 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
            P8 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
            Filter_out : out  STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
+			  RESET : in  STD_LOGIC :='0';
 			  Enable : in STD_LOGIC := '0';
            CLK : in  STD_LOGIC :='0';
            Result_Available : out  STD_LOGIC:='0');
@@ -166,7 +167,7 @@ Port ( P0 : in  STD_LOGIC_VECTOR (7 downto 0):=(others => '0');
  signal G_2 :std_logic_vector ( 31 downto 0) := (others => '0');
  
  signal result_long :std_logic_vector(15 downto 0) := (others => '0');
- signal cntr : integer := 0;
+ signal cntr : integer range 0 to 10 := 0;
 
 begin
 
@@ -312,6 +313,7 @@ begin
 			------------------
 			if cntr = 10 then
 				Result_Available <= '1';
+				
 			end if;
 
 		end if;
@@ -323,8 +325,11 @@ begin
 		if (Enable = '1') then  
 		
 			if (CLK'event and CLK = '1') then
-			
-				cntr <= cntr + 1;
+				if cntr = 10 then 
+					cntr <= 0;
+				else 
+					cntr <= cntr + 1;
+				end if;
 			end if;
 		end if;
 	

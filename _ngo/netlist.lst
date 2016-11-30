@@ -1,3 +1,9 @@
-C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\cache_mem.ngc 1479496762
-ipcore_dir/fifo_8x1024.ngc 1478797306
+C:\Users\Mins\Documents\Xilinx\RealTimeFiltering\Imag_Proc_top.ngc 1480518592
+C:\Users\Mins\Documents\Xilinx\RealTimeFiltering/imgRom_pixGL8b.ngc 1480050252
+C:\Users\Mins\Documents\Xilinx\RealTimeFiltering/fifo_imag_9b_16700.ngc 1480518161
+C:\Users\Mins\Documents\Xilinx\RealTimeFiltering/Vga_df.ngc 1480050252
+C:\Users\Mins\Documents\Xilinx\RealTimeFiltering/imgROM_pixRGB_12b.ngc 1480050250
+ipcore_dir/fifo_8x1024.ngc 1480050278
+ipcore_dir/multiplier.ngc 1480094834
+ipcore_dir/square_multiplier.ngc 1480362613
 OK

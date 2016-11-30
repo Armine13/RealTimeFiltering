@@ -85,8 +85,7 @@ signal P0 : STD_LOGIC_VECTOR (7 downto 0);
 signal enable_filter : STD_LOGIC;
 signal filter_result_available: STD_LOGIC;
 
-signal counter : integer := 0;
-signal count_all:integer := 0;
+signal counter : integer range 0 to 16200 := 0;
 signal START_MEM : STD_LOGIC;
 
 type LIST_STATE is (S1,S2,S3,S4,S5);
@@ -132,25 +131,6 @@ begin
 								
  elsif (CLK'event and CLK = '1') then
 	
---	if (fileready = '1' and endoffile = '0') then
---			
---			start_mem <= '1';
---			RESET_counter  <= '0';
---			
---			enable_filter <= PIXEL_READY;
---					
---		
---			--pixel_filt <= 
---		end if;
---	
---	CLK              : in STD_LOGIC;
---		DATA_IN          : in  STD_LOGIC_VECTOR (7 downto 0);
---      START_PROCESS    : in  STD_LOGIC;
---		RESET            : in STD_LOGIC;
---		RESULT           : out  STD_LOGIC_VECTOR (7 downto 0);
---	   RESULT_AVAILABLE : out  STD_LOGIC);
---START_MEM
-
 	case STATE is
 		when S1 =>
 			START_MEM <= '1';
@@ -180,12 +160,14 @@ end process main;
 count: process(CLK)
 begin
 	if (CLK'event  and CLK = '1') then
-		if (pixel_ready = '1') then--16255
-			counter <= counter + 1;
+		if (pixel_ready = '1') then
+			if counter >= 16139 then 
+				counter <= 0;
+			else
+				counter <= counter + 1;
+			end if;
 		end if;
-		IF START_PROCESS = '1' then
-			count_all<= count_all + 1;
-		end if;
+
 	end if;
 end process count;
 end Behavioral;

@@ -46,7 +46,13 @@ entity Imag_Proc_top is
       vga_green_o    : out std_logic_vector(3 downto 0);
 		
 		-- Switches
-		ISEcho      : in std_logic;
+		--ISEcho      : in std_logic;
+		sw0 : in std_logic;
+		sw1 : in std_logic;
+		sw2 : in std_logic;
+		sw3 : in std_logic;
+		sw4 : in std_logic;
+		
 		ISRealFreq  : in std_logic;
 		ISPureFreq  : in std_logic;
 		ISFIFO	   : in std_logic;
@@ -93,7 +99,43 @@ PORT(
 	);
 END COMPONENT;
 
-component TwoDFilter is
+component TwoDFilter_mean is
+Port( CLK              : in STD_LOGIC;
+		DATA_IN          : in  STD_LOGIC_VECTOR (7 downto 0);
+      START_PROCESS    : in  STD_LOGIC;
+		RESET            : in STD_LOGIC;
+		RESULT           : out  STD_LOGIC_VECTOR (7 downto 0);
+	   RESULT_AVAILABLE : out  STD_LOGIC);
+end component;
+
+component TwoDFilter_laplacian is
+Port( CLK              : in STD_LOGIC;
+		DATA_IN          : in  STD_LOGIC_VECTOR (7 downto 0);
+      START_PROCESS    : in  STD_LOGIC;
+		RESET            : in STD_LOGIC;
+		RESULT           : out  STD_LOGIC_VECTOR (7 downto 0);
+	   RESULT_AVAILABLE : out  STD_LOGIC);
+end component;
+
+component TwoDFilter_sobel is
+Port( CLK              : in STD_LOGIC;
+		DATA_IN          : in  STD_LOGIC_VECTOR (7 downto 0);
+      START_PROCESS    : in  STD_LOGIC;
+		RESET            : in STD_LOGIC;
+		RESULT           : out  STD_LOGIC_VECTOR (7 downto 0);
+	   RESULT_AVAILABLE : out  STD_LOGIC);
+end component;
+
+component TwoDFilter_emboss is
+Port( CLK              : in STD_LOGIC;
+		DATA_IN          : in  STD_LOGIC_VECTOR (7 downto 0);
+      START_PROCESS    : in  STD_LOGIC;
+		RESET            : in STD_LOGIC;
+		RESULT           : out  STD_LOGIC_VECTOR (7 downto 0);
+	   RESULT_AVAILABLE : out  STD_LOGIC);
+end component;
+
+component TwoDFilter_sharpen is
 Port( CLK              : in STD_LOGIC;
 		DATA_IN          : in  STD_LOGIC_VECTOR (7 downto 0);
       START_PROCESS    : in  STD_LOGIC;
@@ -121,7 +163,21 @@ type LIST_STATE is (S1,S2,S3,S4,S5);
 signal STATEG : LIST_STATE;
 
 signal result : std_logic_vector(7 downto 0) := (others => '0');
---signal result_available: std_logic := '0';
+
+signal ISEcho: std_logic := '0';
+signal switch: std_logic_vector(4 downto 0) := (others=>'0');
+
+signal result_mean : std_logic_vector(7 downto 0) := (others => '0');
+signal result_laplacian : std_logic_vector(7 downto 0) := (others => '0');
+signal result_sobel : std_logic_vector(7 downto 0) := (others => '0');
+signal result_emboss : std_logic_vector(7 downto 0) := (others => '0');
+signal result_sharpen : std_logic_vector(7 downto 0) := (others => '0');
+
+signal result_available_mean: std_logic := '0';
+signal result_available_laplacian: std_logic := '0';
+signal result_available_sobel: std_logic := '0';
+signal result_available_emboss: std_logic := '0';
+signal result_available_sharpen: std_logic := '0';
 
 begin
 
@@ -178,14 +234,49 @@ img_lena_8bits : imgRom_pixGL8b
     douta => data_lena_orig
   );
 
-filter1 : TwoDFilter
+filter1 : TwoDFilter_mean
 Port map( CLK          => clk_int,
 		DATA_IN          => data_lena_orig,
       START_PROCESS    => '1',-----ena--------------------------------------------------------------------------------------------------
 		RESET            => rst_i,
-		RESULT           => result,
-	   RESULT_AVAILABLE => open--result_available
+		RESULT           => result_mean,
+	   RESULT_AVAILABLE => result_available_mean
 		);
+
+filter2 : TwoDFilter_laplacian
+Port map( CLK          => clk_int,
+		DATA_IN          => data_lena_orig,
+      START_PROCESS    => '1',-----ena
+		RESET            => rst_i,
+		RESULT           => result_laplacian,
+	   RESULT_AVAILABLE => result_available_laplacian
+		);
+filter3 : TwoDFilter_sobel
+Port map( CLK          => clk_int,
+		DATA_IN          => data_lena_orig,
+      START_PROCESS    => '1',-----ena
+		RESET            => rst_i,
+		RESULT           => result_sobel,
+	   RESULT_AVAILABLE => result_available_sobel
+		);
+filter4 : TwoDFilter_emboss
+Port map( CLK          => clk_int,
+		DATA_IN          => data_lena_orig,
+      START_PROCESS    => '1',-----ena
+		RESET            => rst_i,
+		RESULT           => result_emboss,
+	   RESULT_AVAILABLE => result_available_emboss
+		);		
+filter5 : TwoDFilter_sharpen
+Port map( CLK          => clk_int,
+		DATA_IN          => data_lena_orig,
+      START_PROCESS    => '1',-----ena
+		RESET            => rst_i,
+		RESULT           => result_sharpen,
+	   RESULT_AVAILABLE => result_available_sharpen
+		);		
+
+ISEcho <= sw0 or sw1 or sw2 or sw3 or sw4;
 
 connection : process (clk_int, rst_i)
 begin
@@ -221,6 +312,25 @@ begin
       end case;
     end if;
 end process connection;
-  
+
+ switch(0) <= sw0;
+ switch(1) <= sw1;
+ switch(2) <= sw2;
+ switch(3) <= sw3;
+ switch(4) <= sw4;
+ 
+P2: process(switch, clk_int)
+ 
+begin
+   case switch is
+		when "00001" => result <= result_mean;
+		when "00010" => result <= result_laplacian;
+		when "00100" => result <= result_sobel;
+		when "01000" => result <= result_emboss;
+		when "10000" => result <= result_sharpen;
+		when others => result <= result_mean;
+	end case;
+end process P2;
+
 end Imag_Proc_top_arch;
 
